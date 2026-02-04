@@ -4,7 +4,7 @@ const nextConfig = {
 
   images: {
     domains: [
-      "https://aardishinfotech.in/", // change this to your WP domain
+      "https://aardishinfotech.in/wp-json", // change this to your WP domain
     ],
   },
 };
