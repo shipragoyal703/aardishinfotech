@@ -1,7 +1,6 @@
 import { fetchAPI } from "@/lib/api";
 import Banner from "@/components/banner";
 import Services from "@/components/services";
-import Slider from "@/components/slider";
 import DemoSection from "@/components/demo";
 import Tools from "@/components/tools";
 import Blog from "@/components/blog";
