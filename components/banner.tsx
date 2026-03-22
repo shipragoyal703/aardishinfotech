@@ -11,7 +11,7 @@ export default function Banner({ data }: any) {
             <h1>{data.banner_title}<span>{data.banner_highlight_text}</span></h1>
             <p>{data.banner_text}</p>
             <div className="buttons">
-              <a href={data.demo_link} className="primary-button">Book a Demo</a>
+              <a href={data.demo_link} className="primary-button">Learn More</a>
                <a href={data.demo_link} className="secondary-button">Get Started</a>
             </div>
           </div>

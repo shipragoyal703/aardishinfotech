@@ -21,8 +21,8 @@ export default async function HomePage() {
       <Banner data={page.acf} />
       <Services data={page.acf} />
       <Portfolio data={page.acf} />
-       <DigitalPartner />
-      <TestimonialSec data={page.acf} />
+      <DigitalPartner />
+      <TestimonialSec data={page.acf} /> 
       <Tools data={page.acf} />
       <Blog data={page.acf} posts={posts} />
       <DemoSection />

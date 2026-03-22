@@ -6,8 +6,8 @@ import { Lato } from 'next/font/google';
 import { Be_Vietnam_Pro } from "next/font/google";
 import type { Metadata } from "next";
 import "../styles/global.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import Footer from "@/components/footer";
 
 

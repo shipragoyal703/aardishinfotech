@@ -1,30 +1,15 @@
 "use client";
 
 import "@/styles/services.scss";
-import dynamic from "next/dynamic";
-import { useRef, useState, useMemo } from "react";
-
-const Slider = dynamic(() => import("react-slick"), { ssr: false });
+import { useState, useMemo } from "react";
 
 export default function Services({ data }: any) {
-  const sliderRef = useRef<any>(null);
   const [active, setActive] = useState(0);
 
-  // 🔑 Convert ACF Free fields → array
   const services = useMemo(() => buildServices(data, 6), [data]);
-
-  const settings = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: false,
-    infinite: false,
-    speed: 500,
-  };
 
   const handleClick = (index: number) => {
     setActive(index);
-    sliderRef.current?.slickGoTo(index);
   };
 
   return (
@@ -75,21 +60,28 @@ export default function Services({ data }: any) {
                   ))}
                 </div>
 
-                {/* RIGHT SLIDER */}
+                {/* RIGHT IMAGE SLIDER */}
                 <div className="col-lg-6 accordian-slider-img">
-                  <Slider ref={sliderRef} {...settings}>
-                    {services.map((item, index) => (
-                      <div key={index} className="img-slide">
-                        {item.image?.url && (
-                          <img
-                            src={item.image.url}
-                            alt={item.image.alt || item.title}
-                            loading="lazy"
-                          />
-                        )}
-                      </div>
-                    ))}
-                  </Slider>
+                  <div className="slider-wrapper">
+                    <div
+                      className="slider-track"
+                      style={{
+                        transform: `translateX(-${active * 100}%)`,
+                      }}
+                    >
+                      {services.map((item, index) => (
+                        <div key={index} className="slide">
+                          {item.image?.url && (
+                            <img
+                              src={item.image.url}
+                              alt={item.image.alt || item.title}
+                              loading="lazy"
+                            />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -102,9 +94,8 @@ export default function Services({ data }: any) {
   );
 }
 
-/* 🔧 Helper */
 function buildServices(acf: any, count: number) {
-  const items = [];
+  const items: any[] = [];
 
   for (let i = 1; i <= count; i++) {
     const title = acf?.[`service_title_${i}`];
@@ -112,13 +103,13 @@ function buildServices(acf: any, count: number) {
     const image = acf?.[`service_image_${i}`];
 
     if (title || description || image) {
-      items.push({ title, description, image });
+      items.push({
+        title,
+        description,
+        image,
+      });
     }
   }
 
   return items;
 }
-
-
-
-

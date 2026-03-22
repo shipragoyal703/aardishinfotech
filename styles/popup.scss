@@ -12,10 +12,16 @@
   background: #fff;
   padding: 32px;
   border-radius: 12px;
-  max-width: 500px;
+  max-width: 640px;
   width: 90%;
   position: relative;
   animation: scaleIn 0.3s ease;
+  @media(max-width:767px){
+        padding: 18px;
+  }
+   h2 {
+    font-weight: bold;
+}
 }
 
 .close {
@@ -38,3 +44,4 @@
     opacity: 1;
   }
 }
+
