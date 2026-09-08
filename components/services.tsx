@@ -17,22 +17,28 @@ export default function Services({ data }: any) {
       <div className="container">
         <div className="row">
 
-          {/* HEADING */}
+          {/* Heading */}
           <div className="col-sm-12 main-heading">
             <h3>{data.service_sub_title}</h3>
+
             <h4
               className="title-txt"
-              dangerouslySetInnerHTML={{ __html: data.service_title }}
+              dangerouslySetInnerHTML={{
+                __html: data.service_title,
+              }}
             />
-            <p className="description">{data.service_description_text}</p>
+
+            <p className="description">
+              {data.service_description_text}
+            </p>
           </div>
 
-          {/* CONTENT */}
+          {/* Content */}
           <div className="col-sm-12">
             <div className="service-slider">
               <div className="plateform-slider row">
 
-                {/* LEFT ACCORDION */}
+                {/* Left Accordion */}
                 <div className="col-lg-6 slide-accordian">
                   {services.map((item, index) => (
                     <div
@@ -60,7 +66,7 @@ export default function Services({ data }: any) {
                   ))}
                 </div>
 
-                {/* RIGHT IMAGE SLIDER */}
+                {/* Right Image Slider */}
                 <div className="col-lg-6 accordian-slider-img">
                   <div className="slider-wrapper">
                     <div
@@ -71,13 +77,29 @@ export default function Services({ data }: any) {
                     >
                       {services.map((item, index) => (
                         <div key={index} className="slide">
-                          {item.image?.url && (
-                            <img
-                              src={item.image.url}
-                              alt={item.image.alt || item.title}
-                              loading="lazy"
-                            />
-                          )}
+                          <div className={`animation-img-wrap ${
+    active === index ? "animate" : ""
+  }`}>
+
+                            {item.image?.url && (
+                              <img
+                                src={item.image.url}
+                                alt={item.image.alt || item.title}
+                                className="animation-main-img"
+                                loading="lazy"
+                              />
+                            )}
+
+                            {item.animationImage?.url && (
+                              <img
+                                src={item.animationImage.url}
+                                alt={item.animationImage.alt || item.title}
+                                className="animation-hover-img"
+                                loading="lazy"
+                              />
+                            )}
+
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -101,12 +123,14 @@ function buildServices(acf: any, count: number) {
     const title = acf?.[`service_title_${i}`];
     const description = acf?.[`service_description_${i}`];
     const image = acf?.[`service_image_${i}`];
+    const animationImage = acf?.[`service_image_${i}_animation`];
 
     if (title || description || image) {
       items.push({
         title,
         description,
         image,
+        animationImage,
       });
     }
   }
