@@ -2,7 +2,7 @@ import Image from "next/image";
 import "@/styles/footer.scss";
 import Link from "next/link";
 
-export default function Footer({ menu }: { menu: any[] }) {
+export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
@@ -25,11 +25,10 @@ export default function Footer({ menu }: { menu: any[] }) {
         <h3>QUICK LINKS</h3>
         <nav>
           <ul>
-            {menu?.map((item: any) => (
-              <li key={item.id} className={item.classes}>
-                <a href={item.url}>{item.title}</a>
-              </li>
-            ))}
+             <li><Link href="/about">About us</Link></li>
+                 <li><Link href="/services">Services </Link></li>
+                  <li><Link href="/how-it-works">How It Works</Link></li>
+                    <li><Link href="/contact">Contact Us </Link></li>
           </ul>
         </nav>
         </div>

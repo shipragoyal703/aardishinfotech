@@ -1,5 +1,5 @@
 import Header from "@/components/header";
-import { getMenu } from "@/lib/menu";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Inter } from "next/font/google";
 import { Lato } from 'next/font/google';
@@ -44,9 +44,9 @@ export default async function RootLayout({
       <body
         className={`${inter.variable}  ${lato.variable} antialiased`}
       >
-         <Header menu={menuData?.items || []} />
+         <Header />
         {children}
-        <Footer menu={menuData?.items || []} />
+        <Footer  />
       </body>
     </html>
   );
