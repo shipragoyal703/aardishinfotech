@@ -3,10 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import "@/styles/header.scss";
-import Popup from "./popup";
 import Link from "next/link";
 
-export default function Header({ menu }: { menu: any[] }) {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);   // ✅ menu
  
 
@@ -34,13 +33,17 @@ export default function Header({ menu }: { menu: any[] }) {
           <div className={`col-sm-9 nav-wrapper ${menuOpen ? "open" : ""}`}>
             <nav>
               <ul>
-                {menu?.map((item) => (
-                  <li key={item.id} className={item.classes}>
+                <li><Link href="/about">About us</Link></li>
+                 <li><Link href="/services">Services </Link></li>
+                  <li><Link href="/how-it-works">How It Works</Link></li>
+                    <li><Link href="/contact">Contact Us </Link></li>
+                {/* {menu?.map((item) => (
+                 <li key={`${item.id}-${item.url}`} className={item.classes}>
                     <Link href={item.url} onClick={() => setMenuOpen(false)}>
                       {item.title}
                     </Link>
                   </li>
-                ))}
+                ))} */}
 
                 {/* ✅ Demo Button */}
                 <li className="demo-button">

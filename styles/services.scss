@@ -59,22 +59,22 @@ h4.title-txt strong {
     border-bottom: 1px solid rgb(90 82 236 / 20%);
     position: relative;
     &:nth-child(1) .accordian-toggle-btn{
-        background-image: url(https://wordpress.aardishinfotech.in/wp-content/uploads/2025/12/3dcube.png);
+        background-image: url(/3dcube.png);
     }
     &:nth-child(2) .accordian-toggle-btn{
-        background-image: url(https://wordpress.aardishinfotech.in/wp-content/uploads/2025/12/triangle-4.png);
+        background-image: url(/triangle-4.png);
     }
     &:nth-child(3) .accordian-toggle-btn{
-        background-image: url(https://wordpress.aardishinfotech.in/wp-content/uploads/2025/12/triangle-3.png);
+        background-image: url(/triangle-3.png);
     }
     &:nth-child(4) .accordian-toggle-btn{
-        background-image: url(https://wordpress.aardishinfotech.in/wp-content/uploads/2025/12/triangle-2.png);
+        background-image: url(/triangle-2.png);
     }
     &:nth-child(5) .accordian-toggle-btn{
-        background-image: url(https://wordpress.aardishinfotech.in/wp-content/uploads/2025/12/triangle-1.png);
+        background-image: url(/triangle-1.png);
     }
     &:nth-child(6) .accordian-toggle-btn{
-        background-image: url(https://wordpress.aardishinfotech.in/wp-content/uploads/2025/12/triangle.png);
+        background-image: url(/triangle.png);
     }
     .accordian-toggle-btn {
         justify-content: space-between;
@@ -117,7 +117,7 @@ h4.title-txt strong {
     position: absolute;
     right: 0;
     top: 30px;
-    background-image: url(/wp-content/uploads/2025/12/Down_Arrow_3_.png);
+    background-image: url(/Down_Arrow_3_.png);
     background-repeat: no-repeat;
     background-position: center;
     transition: 1s all ease;

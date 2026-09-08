@@ -299,7 +299,7 @@ section.values-section .section-heading h2 span {
 .orbit-1{
     width:300px;
     height:300px;
-    animation:spin 18s linear infinite;
+    //animation:spin 18s linear infinite;
 }
 
 .orbit-2{
@@ -311,7 +311,7 @@ section.values-section .section-heading h2 span {
 .orbit-3{
     width:620px;
     height:620px;
-    animation:spin 35s linear infinite;
+    //animation:spin 35s linear infinite;
 }
 .center-orb{
 
@@ -1152,7 +1152,7 @@ $color_8: #b66aff;
 		box-shadow: 0 15px 35px rgba(54, 20, 100, 0.35), 0 0 25px rgba(125, 55, 255, 0.3);
 	}
 }
-.floating-icon {
+.why-choose .floating-icon {
 	width: 28px;
 	height: 28px;
 	display: flex;
@@ -1163,6 +1163,7 @@ $color_8: #b66aff;
 	background: rgba(127, 61, 255, 0.2);
 	font-size: 14px;
 	font-weight: 700;
+	position: unset;
 }
 .card-strategy {
 	top: 45px;
@@ -3491,6 +3492,7 @@ $border-left-color_1: transparent;
 	max-width: 100%;
 	margin: auto;
 	isolation: isolate;
+	font-family: 'Inter';
 }
 .hiw-glow {
 	position: absolute;
@@ -3580,30 +3582,8 @@ $border-left-color_1: transparent;
 		animation: hiw-sphere-light 4s ease-in-out infinite;
 	}
 }
-.hiw-sphere-ring {
-	position: absolute;
-	width: 290px;
-	height: 85px;
-	left: -18px;
-	border: 2px solid rgba(185, 117, 255, .7);
-	border-left-color: $border-left-color_1;
-	border-right-color: $border-right-color_1;
-	border-radius: 50%;
-}
-.hiw-sphere-ring-1 {
-	top: 80px;
-	transform: rotate(18deg);
-}
-.hiw-sphere-ring-2 {
-	top: 90px;
-	transform: rotate(-22deg);
-	border-color: $border-color_2;
-}
-.hiw-sphere-ring-3 {
-	top: 45px;
-	transform: rotate(65deg);
-	opacity: .4;
-}
+
+
 .hiw-sphere-content {
 	position: absolute;
 	inset: 0;
@@ -3665,9 +3645,8 @@ $border-left-color_1: transparent;
 }
 .hiw-step {
 	position: absolute;
-	display: flex;
-	align-items: center;
-	gap: 15px;
+	display: block;
+	text-align: center;
 	width: 235px;
 	min-height: 125px;
 	padding: 18px;
@@ -3686,8 +3665,9 @@ $border-left-color_1: transparent;
 	h3 {
 		margin: 5px 0;
 		color: $color_1;
-		font-size: 15px;
+		font-size: 16px;
 		line-height: 1.2;
+		font-weight: bold;
 	}
 	p {
 		margin: 0;
@@ -3703,6 +3683,7 @@ $border-left-color_1: transparent;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 0 auto 20px;
 	border-radius: 50%;
 	border: 1px solid #a258ff;
 	background: radial-gradient( circle, rgba(146, 71, 255, .35), rgba(28, 8, 72, .8) );
@@ -3722,12 +3703,12 @@ $border-left-color_1: transparent;
 }
 .hiw-step-01 {
 	left: 5px;
-	bottom: 125px;
+	bottom: 145px;
 	animation: hiw-card-1 4s ease-in-out infinite;
 }
 .hiw-step-02 {
-	left: 100px;
-	top: 55px;
+	left: 0px;
+	top: 75px;
 	animation: hiw-card-2 4.5s ease-in-out infinite;
 }
 .hiw-step-03 {
@@ -3736,13 +3717,13 @@ $border-left-color_1: transparent;
 	animation: hiw-card-3 4.2s ease-in-out infinite;
 }
 .hiw-step-04 {
-	right: -5px;
-	top: 330px;
+	right: -15px;
+	top: 300px;
 	animation: hiw-card-4 4.7s ease-in-out infinite;
 }
 .hiw-step-05 {
-	right: 205px;
-	bottom: 25px;
+	right: 195px;
+	bottom: 55px;
 	animation: hiw-card-5 4.3s ease-in-out infinite;
 }
 .hiw-particle {
