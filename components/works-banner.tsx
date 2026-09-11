@@ -37,7 +37,7 @@ export default function WorksAnimation() {
                 <div className="hero-animation">
                   <div className="scene">
                     <div className="mobile-img">
-                      <Image src="/work-mobile.png"  width={300} height={300}/>
+                      <Image src="/work-mobile.png"  width={300} height={300} alt="works image" />
                     </div>
                     <div className="hiw-graphic">
                       <div className="hiw-glow"></div>
