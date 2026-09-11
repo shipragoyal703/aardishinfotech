@@ -36,10 +36,10 @@ export default function WorksAnimation() {
               <div className="banner-animation works-banner">
                 <div className="hero-animation">
                   <div className="scene">
-                    <div class="hiw-graphic">
-                      <div class="hiw-glow"></div>
+                    <div className="hiw-graphic">
+                      <div className="hiw-glow"></div>
                       <svg
-                        class="hiw-process-path"
+                        className="hiw-process-path"
                         viewBox="0 0 700 700"
                         preserveAspectRatio="none"
                       >
@@ -73,15 +73,15 @@ export default function WorksAnimation() {
                           stroke-linejoin="round"
                         ></path>
                       </svg>
-                      <span class="hiw-particle hiw-particle-1"></span>
-                      <span class="hiw-particle hiw-particle-2"></span>
-                      <span class="hiw-particle hiw-particle-3"></span>
-                      <span class="hiw-particle hiw-particle-4"></span>
-                      <span class="hiw-particle hiw-particle-5"></span>
-                      <span class="hiw-particle hiw-particle-6"></span>
-                      <div class="hiw-center">
-                        <div class="hiw-sphere">
-                          <div class="hiw-sphere-content">
+                      <span className="hiw-particle hiw-particle-1"></span>
+                      <span className="hiw-particle hiw-particle-2"></span>
+                      <span className="hiw-particle hiw-particle-3"></span>
+                      <span className="hiw-particle hiw-particle-4"></span>
+                      <span className="hiw-particle hiw-particle-5"></span>
+                      <span className="hiw-particle hiw-particle-6"></span>
+                      <div className="hiw-center">
+                        <div className="hiw-sphere">
+                          <div className="hiw-sphere-content">
                             <small>YOUR VISION</small>
                             <strong>
                               From Ideas to<span>Real Impact</span>
@@ -90,54 +90,54 @@ export default function WorksAnimation() {
                             <small>OUR PROCESS</small>
                           </div>
                         </div>
-                        <div class="hiw-platform"></div>
+                        <div className="hiw-platform"></div>
                       </div>
-                      <div class="hiw-step hiw-step-01">
-                        <div class="hiw-step-icon">
+                      <div className="hiw-step hiw-step-01">
+                        <div className="hiw-step-icon">
                           <span>⌕</span>
                         </div>
-                        <div class="hiw-step-content">
-                          <div class="hiw-step-number">01</div>
+                        <div className="hiw-step-content">
+                          <div className="hiw-step-number">01</div>
                           <h3>Discover</h3>
                          
                         </div>
                       </div>
-                      <div class="hiw-step hiw-step-02">
-                        <div class="hiw-step-icon">
+                      <div className="hiw-step hiw-step-02">
+                        <div className="hiw-step-icon">
                           <span>☷</span>
                         </div>
-                        <div class="hiw-step-content">
-                          <div class="hiw-step-number">02</div>
+                        <div className="hiw-step-content">
+                          <div className="hiw-step-number">02</div>
                           <h3>Plan &amp; Strategize</h3>
                           
                         </div>
                       </div>
-                      <div class="hiw-step hiw-step-03">
-                        <div class="hiw-step-icon">
+                      <div className="hiw-step hiw-step-03">
+                        <div className="hiw-step-icon">
                           <span>&lt;/&gt;</span>
                         </div>
-                        <div class="hiw-step-content">
-                          <div class="hiw-step-number">03</div>
+                        <div className="hiw-step-content">
+                          <div className="hiw-step-number">03</div>
                           <h3>Design &amp; Develop</h3>
                          
                         </div>
                       </div>
-                      <div class="hiw-step hiw-step-04">
-                        <div class="hiw-step-icon">
+                      <div className="hiw-step hiw-step-04">
+                        <div className="hiw-step-icon">
                           <span>⚙</span>
                         </div>
-                        <div class="hiw-step-content">
-                          <div class="hiw-step-number">04</div>
+                        <div className="hiw-step-content">
+                          <div className="hiw-step-number">04</div>
                           <h3>Test &amp; Refine</h3>
                           
                         </div>
                       </div>
-                      <div class="hiw-step hiw-step-05">
-                        <div class="hiw-step-icon">
+                      <div className="hiw-step hiw-step-05">
+                        <div className="hiw-step-icon">
                           <span>↗</span>
                         </div>
-                        <div class="hiw-step-content">
-                          <div class="hiw-step-number">05</div>
+                        <div className="hiw-step-content">
+                          <div className="hiw-step-number">05</div>
                           <h3>Launch &amp; Grow</h3>
                          
                         </div>
