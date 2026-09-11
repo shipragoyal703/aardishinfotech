@@ -80,10 +80,10 @@ export default function Footer() {
             </div>
         </div>
         <div className="col-sm-12 copyright">
-                <div className="col-sm-6">
+                <div className="col-md-6">
                     <p>© AardshishInfotech 2026. All rights reserved</p>
                 </div>
-                <div className="col-sm-6">
+                <div className="col-md-6">
                    <ul>
                     <li><Link href="#">Privacy Policy</Link></li>
                      <li><Link href="#">Terms & Conditions</Link></li>

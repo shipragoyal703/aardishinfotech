@@ -752,7 +752,7 @@ section.contact-form iframe {
 
 @media(max-width:1440px){
 .laptop {
-    left: 41%;
+    left: 35%;
 }
 .hero-animation .code {
     left: 0;
@@ -772,6 +772,9 @@ section.contact-form iframe {
 .hero-animation .gear {
     top: 50px;
     left: 40px;
+}
+.value-card {
+    padding: 30px;
 }
 }
 
@@ -829,6 +832,7 @@ section.contact-form iframe {
 .value-card p {
     font-size: 15px;
 }
+
 .value-card h3 {
     font-size: 18px;
     margin-top: 15px;
@@ -878,6 +882,10 @@ section.values-section.guide .value-card p {
 .why-container {
     gap: 25px;
 }
+.orbit-3 {
+    width: 490px;
+    height: 490px;
+}
 }
 
 @media(max-width:991px){
@@ -894,8 +902,20 @@ section.values-section.guide .value-card p {
     min-height: auto;
     font-size: 16px;
 }
+.service-box h3 {
+    font-size: 20px;
+    line-height: 28px;
+    min-height: 50px;
 }
-
+.service-box .detail p {
+    font-size: 16px;
+    line-height: 26px;
+}
+.image-text h3, section.values-section .section-heading h2 {
+    font-size: 48px;
+}
+}
+ 
 @media(max-width:767px){
  .orbit-2, .orbit-3 {
     width: 260px;
@@ -1205,6 +1225,9 @@ $color_8: #b66aff;
 	.why-visual {
 		min-height: 420px;
 	}
+	.why-choose {
+    padding: 80px 0;
+}
 }
 @media (max-width: 600px) {
 	.why-choose {
@@ -1496,6 +1519,11 @@ $color_5: #aaa3ba;
 		max-width: 900px;
 		width: 100%;
 		margin: 0 auto;
+		        justify-content: center;
+        display: flex;
+	}
+	.step-line {
+    	margin-left: 22px;
 	}
 }
 @media (max-width: 700px) {
@@ -2238,6 +2266,15 @@ $color_7: #5b2da1;
     transform: rotate(360deg);
   }
 }
+
+@media(max-width:991px){
+	.node-two {
+    right: 120px;
+}
+.node-four {
+    left: 100px;
+}
+}
 @media (max-width: 850px) {
 	.collaboration-container {
 		grid-template-columns: 1fr;
@@ -2441,6 +2478,7 @@ $border-color_1: #c5a1f8;
 		height: 25px;
 	}
 }
+
 @media (max-width: 850px) {
 	.contact-options-grid {
 		grid-template-columns: 1fr;
@@ -3229,6 +3267,24 @@ $border-left-color_1: transparent;
 	left: 115px;
 	bottom: 75px;
 }
+
+@media (max-width: 1440px) {
+	.contact-option {
+    display: block;
+	min-width: 125px;
+}
+.option-icon {
+    margin-bottom: 20px;
+}
+.contact-option strong {
+    font-size: 18px;
+}
+}
+@media (max-width: 1366px) {
+.contact-option {
+    min-width: 115px;
+}
+}
 @media (max-width: 1200px) {
 	.contact-container {
 		grid-template-columns: 1fr;
@@ -3251,8 +3307,12 @@ $border-left-color_1: transparent;
 	.contact-visual {
 		margin: 30px auto 0;
 	}
+	.orbit-3 {
+    width: 490px;
+    height: 490px;
 }
-@media (max-width: 700px) {
+}
+@media (max-width: 767px) {
 	.contact-hero {
 		min-height: auto;
 	}
@@ -3275,29 +3335,30 @@ $border-left-color_1: transparent;
 	.contact-description {
 		font-size: 16px;
 	}
-	.contact-options {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 25px;
-	}
 	.contact-option {
 		min-width: 0;
+		width: 45%;
 	}
 	.option-icon {
 		width: 52px;
 		height: 52px;
-		flex-basis: 52px;
+		margin: 0 auto 10px;
+		
 		svg {
 			width: 24px;
 			height: 24px;
 		}
-	}
+	} 
 	.contact-visual {
 		width: 100%;
 		height: 480px;
 		transform: scale(0.8);
 		transform-origin: center;
 	}
+	.orbit-3 ,.orbit-2{
+    	display: none;
+	}
+	
 }
 @media (max-width: 480px) {
 	.contact-content {
@@ -3306,13 +3367,15 @@ $border-left-color_1: transparent;
 		}
 	}
 	.contact-options {
-		grid-template-columns: 1fr;
+		display: flex;
+		padding: 0;
 	}
 	.contact-visual {
-		transform: scale(0.62);
-		margin-left: -5%;
-		width: 110%;
+		display: none;
 	}
+	.contact-options-container {
+    padding-top: 50px;
+}
 }
 
 .banner-animation.works-banner img {
@@ -3765,19 +3828,76 @@ $border-left-color_1: transparent;
 	top: 115px;
 	animation-delay: 1.2s;
 }
-@media (max-width: 900px) {
+.works-banner .mobile-img {
+    display: none;
+}
+@media (max-width: 1440px) {
+.hiw-graphic {
+    width: 660PX;
+    height: 660PX;
+}
+.hiw-step{
+	width: 170px;
+}
+.hiw-step-04 {
+    right: 10px;
+}
+section.about-section .trust-logos {
+    margin-top: 180px;
+}
+}
+@media (max-width: 1280px) {
+.hiw-graphic {
+    width: 600PX;
+    height: 660PX;
+}
+}
+@media (max-width: 1199px) {
+.hiw-graphic {
+    width: 510PX;
+    height: 667PX;
+    top: -90px;
+}
+.hiw-step-05 {
+    right: 146px;
+    bottom: 35px;
+}
+.hiw-step-02 {
+    top: 25px;
+}
+.hiw-step-03 {
+    top: 5px;
+}
+}
+@media (max-width: 991px) {
 	.hiw-graphic {
 		transform: scale(.82);
 		transform-origin: center;
 	}
-}
-@media (max-width: 600px) {
 	.hiw-graphic {
-		width: 100%;
-		height: 560px;
-		transform: scale(.55);
-		transform-origin: top center;
-		margin-bottom: -180px;
+    width: 650PX;
+    height: 717PX;
+    top: -130px;
+}
+}
+@media (max-width: 767px) {
+	.hiw-graphic {
+		display: none;
 	}
+	.works-banner .mobile-img {
+    display: block;
+}
+section.about-section .trust-logos {
+    margin-top: 20px;
+}
+section.about-section .banner-animation {
+    margin: 40px auto 0;
+    HEIGHT: auto;
+    width: 100%;
+}
+section.about-section .scene {
+    width: 100%;
+    height: auto;
+}
 }
 

@@ -12,7 +12,7 @@ footer.footer {
     line-height: 19px;
     letter-spacing: 1px;
     font-family: "Inter", sans-serif;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 
     @media (max-width: 767px) {
       margin-top: 20px;
@@ -99,7 +99,7 @@ footer.footer {
       z-index: 1;
        @media (max-width: 1199px) {
             position: unset;
-            margin-top: 5px;
+            margin-top: 20px;
        }
     }
   }

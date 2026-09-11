@@ -36,6 +36,9 @@ export default function WorksAnimation() {
               <div className="banner-animation works-banner">
                 <div className="hero-animation">
                   <div className="scene">
+                    <div className="mobile-img">
+                      <Image src="/work-mobile.png"  width={300} height={300}/>
+                    </div>
                     <div className="hiw-graphic">
                       <div className="hiw-glow"></div>
                       <svg
