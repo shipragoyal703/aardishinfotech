@@ -7,7 +7,7 @@ import HubSpotContactForm from "@/components/HubSpotContactForm";
 
 
 
-export default async function ContactPage() {
+export default function ContactPage() {
 
 
   return (
@@ -23,7 +23,7 @@ export default async function ContactPage() {
       </div>
 
       <h1>
-        Let’s Build Something new and
+        Let’s Build Something new and 
         <span>Extraordinary Together</span>
       </h1>
 
@@ -190,14 +190,14 @@ export default async function ContactPage() {
               height="14"
               rx="2"
               stroke="currentColor"
-              stroke-width="1.8"
+              strokeWidth="1.8"
             />
             <path
               d="m4 7 8 6 8-6"
               stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -205,14 +205,14 @@ export default async function ContactPage() {
         <div>
           <span>Email Us</span>
 
-          <h3>info.aardishinfotech.com</h3>
+          <h3>info@aardishinfotech.com</h3>
 
           <p>
             Send us your project details anytime.
           </p>
         </div>
 
-        <a href="mailto:info.aardishinfotech.com">
+        <a href="mailto:info@aardishinfotech.com">
           →
         </a>
 
@@ -224,8 +224,8 @@ export default async function ContactPage() {
             <path
               d="M6.6 3h3.1l1.5 5-2 1.7a14.4 14.4 0 0 0 5.1 5.1l1.7-2 5 1.5v3.1c0 1.1-.9 2-2 2C11.3 19.4 4.6 12.7 4.6 5c0-1.1.9-2 2-2Z"
               stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linejoin="round"
+              strokeWidth="1.8"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -256,19 +256,19 @@ export default async function ContactPage() {
               height="17"
               rx="2"
               stroke="currentColor"
-              stroke-width="1.8"
+              strokeWidth="1.8"
             />
             <path
               d="M7 2v4M17 2v4M3 9h18"
               stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
+              strokeWidth="1.8"
+              strokeLinecap="round"
             />
             <path
               d="M8 13h3M8 17h6"
               stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
+              strokeWidth="1.8"
+              strokeLinecap="round"
             />
           </svg>
         </div>
