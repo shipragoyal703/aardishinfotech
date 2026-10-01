@@ -11,7 +11,7 @@ export default async function ContactPage() {
 
 
   return (
-    <>
+    <> 
      
       <section className="contact-hero">
   <div className="contact-container">
@@ -205,7 +205,7 @@ export default async function ContactPage() {
         <div>
           <span>Email Us</span>
 
-          <h3><a href="mailto:info.aardishinfotech.com">info.aardishinfotech.com</a></h3>
+          <h3>info.aardishinfotech.com</h3>
 
           <p>
             Send us your project details anytime.
@@ -233,7 +233,7 @@ export default async function ContactPage() {
         <div>
           <span>Call Us</span>
 
-          <h3><a href="tel:8054071080">8054071080</a></h3>
+          <h3>8054071080</h3>
 
           <p>
             Let's discuss your requirements.
@@ -294,7 +294,7 @@ export default async function ContactPage() {
   </div>
 </section>
 
-<section className="contact-form-section" id="contact-form">
+<section className="contact-form-section">
 
   <div className="contact-form-container">
 
