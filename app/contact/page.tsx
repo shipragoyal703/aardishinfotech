@@ -11,7 +11,7 @@ export default async function ContactPage() {
 
 
   return (
-    <>
+    <> 
      
       <section className="contact-hero">
   <div className="contact-container">
@@ -23,7 +23,7 @@ export default async function ContactPage() {
       </div>
 
       <h1>
-        Let’s Build Something
+        Let’s Build Something new and
         <span>Extraordinary Together</span>
       </h1>
 
