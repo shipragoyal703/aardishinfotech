@@ -52,7 +52,7 @@ export default function BannerAnimation() {
     });
 
     counter(speedRef.current, 1, 3, 1200);
-    counter(accuracyRef.current, 0, 98, 1800);
+    counter(accuracyRef.current, 0, 99, 1800);
 
     return () => {
       animationIds.forEach((id) => cancelAnimationFrame(id));
@@ -75,7 +75,7 @@ export default function BannerAnimation() {
               <h3>
                 <span ref={accuracyRef}>0</span>%
               </h3>
-              <p>Accuracy Rate</p>
+              <p>Statisfied Clients</p>
             </div>
           </div>
 
@@ -84,7 +84,7 @@ export default function BannerAnimation() {
               <div className="img-wrap">
                 <Image
                   src="https://wordpress.aardishinfotech.in/wp-content/uploads/2026/06/Bento-Card-Vol-5-1.png"
-                  alt="End-to-End Coverage"
+                  alt="End-to-End Life Cycle Coverage"
                   width={500}
                   height={350}
                   className="main-img"
@@ -100,7 +100,7 @@ export default function BannerAnimation() {
               </div>
 
               <div className="content">
-                <h3>End-to-End Coverage</h3>
+                <h3>End-to-End Life Cycle Coverage</h3>
                 <p>From idea to launch to ongoing maintenance.</p>
               </div>
             </div>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import "@/styles/services.scss";
@@ -33,13 +34,14 @@ export default function Services({ data }: any) {
             </p>
           </div>
 
-          {/* Content */}
+          {/* Services Content */}
           <div className="col-sm-12">
             <div className="service-slider">
               <div className="plateform-slider row">
 
                 {/* Left Accordion */}
                 <div className="col-lg-6 slide-accordian">
+
                   {services.map((item, index) => (
                     <div
                       key={index}
@@ -48,26 +50,52 @@ export default function Services({ data }: any) {
                       }`}
                       onClick={() => handleClick(index)}
                     >
+
+                      {/* Accordion Title */}
                       <div className="accordian-toggle-btn">
                         <div className="accordian-title">
                           {item.title}
                         </div>
                       </div>
 
+                      {/* Active Content */}
                       {active === index && (
-                        <div
-                          className="accordian-txt"
-                          dangerouslySetInnerHTML={{
-                            __html: item.description,
-                          }}
-                        />
+                        <>
+                          {/* Description */}
+                          <div
+                            className="accordian-txt"
+                            dangerouslySetInnerHTML={{
+                              __html: item.description,
+                            }}
+                          />
+
+                          {/* Mobile Image */}
+                          <div className="mobile-service-image">
+                            <div className="animation-img-wrap animate">
+
+                              {item.image?.url && (
+                                <img
+                                  src={item.image.url}
+                                  alt={item.image.alt || item.title}
+                                  className="animation-main-img"
+                                  loading="lazy"
+                                />
+                              )}
+
+                              
+                            </div>
+                          </div>
+                        </>
                       )}
+
                     </div>
                   ))}
+
                 </div>
 
-                {/* Right Image Slider */}
+                {/* Desktop Right Image Slider */}
                 <div className="col-lg-6 accordian-slider-img">
+
                   <div className="slider-wrapper">
                     <div
                       className="slider-track"
@@ -75,11 +103,15 @@ export default function Services({ data }: any) {
                         transform: `translateX(-${active * 100}%)`,
                       }}
                     >
+
                       {services.map((item, index) => (
                         <div key={index} className="slide">
-                          <div className={`animation-img-wrap ${
-    active === index ? "animate" : ""
-  }`}>
+
+                          <div
+                            className={`animation-img-wrap ${
+                              active === index ? "animate" : ""
+                            }`}
+                          >
 
                             {item.image?.url && (
                               <img
@@ -93,17 +125,22 @@ export default function Services({ data }: any) {
                             {item.animationImage?.url && (
                               <img
                                 src={item.animationImage.url}
-                                alt={item.animationImage.alt || item.title}
+                                alt={
+                                  item.animationImage.alt || item.title
+                                }
                                 className="animation-hover-img"
                                 loading="lazy"
                               />
                             )}
 
                           </div>
+
                         </div>
                       ))}
+
                     </div>
                   </div>
+
                 </div>
 
               </div>
@@ -116,6 +153,8 @@ export default function Services({ data }: any) {
   );
 }
 
+
+/* Build Services from ACF */
 function buildServices(acf: any, count: number) {
   const items: any[] = [];
 

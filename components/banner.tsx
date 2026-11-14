@@ -3,6 +3,7 @@ import BannerAnimation from "@/components/BannerAnimation";
 import AboutAnimation from "@/components/AboutBannerAnimation";
 import ServiceAnimation from "./ServiceBanner";
 import WorksAnimation from "./works-banner";
+import Link from "next/link";
 
 interface BannerProps {
   data: any;
@@ -51,13 +52,13 @@ export default function Banner({
 </div>
 
             <div className="buttons">
-              <a href={data.demo_link} className="primary-button">
+              <Link href="https://calendly.com/akshays103/15min" className="primary-button" target="_blank">
                {data.demo_link_text}
-              </a>
+              </Link>
 
-              <a href={data.demo_link} className="secondary-button">
+              <Link href="/services" className="secondary-button">
                 {data.get_started_text}
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -101,7 +101,7 @@ export default function DigitalPartner() {
                     <span className="plus">+</span>
                   </div>
 
-                    <p>happy users</p>
+                    <p>Happy Clients <br /> World Wide</p>
                     <div className="image-stack">
                       <img src="/circle1.png" className="img img-1" alt="users" />
                       <img src="/circle2.png" className="img img-2" alt="users" />

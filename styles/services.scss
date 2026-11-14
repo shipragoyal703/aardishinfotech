@@ -338,3 +338,51 @@ h4.title-txt strong {
   }
 
 }
+
+
+/* Desktop */
+.mobile-service-image {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+
+  .services {
+
+    .accordian-slider-img {
+      display: none !important;
+    }
+
+    .mobile-service-image {
+      display: block;
+      width: 100%;
+      margin-top: 25px;
+      overflow: hidden;
+      border-radius: 25px;
+      margin-bottom: 40px;
+
+      .animation-img-wrap {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 25px;
+      }
+
+      .animation-main-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .animation-hover-img {
+        max-width: 100%;
+      }
+    }
+
+    .accordian-item.active {
+      overflow: hidden;
+    }
+  }
+}

@@ -23,7 +23,7 @@ export default function ContactPage() {
       </div>
 
       <h1>
-        Let’s Build Something new and 
+        Let’s Build Something 
         <span>Extraordinary Together</span>
       </h1>
 

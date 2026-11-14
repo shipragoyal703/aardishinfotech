@@ -9,79 +9,43 @@ export const WORK_TABS = [
     label: "Featured",
     items: [
       {
-        image: "/portfolio1.png",
-        heading: "100%",
-        title: "Accessibility Compliance",
-        description:
-          "We rebuilt Highspot with blazing-fast performance and Google-backed best practices. Fully ADA-compliant and SEO-optimized—accessible, responsive, and ready to scale."
+        image: "/feature3.png"
       },
       {
-        image: "/portfolio2.png",
-        heading: "3x",
-        title: "Performance Boost",
-        description:
-          "Optimized UX and engineering improvements led to measurable speed and engagement gains."
+        image: "/feature1.png"
       },
       {
-        image: "/portfolio1.png",
-        heading: "2x",
-        title: "Conversion Growth",
-        description:
-          "Conversion-focused design patterns improved user flow and business outcomes."
+        image: "/feature2.png"
       }
-    ]
+    ] 
   },
   {
     id: "Design",
-    label: "Design",
+    label: "UI/UX Design",
     items: [
       {
-        image: "/portfolio2.png",
-        heading: "95%",
-        title: "Design Consistency",
-        description:
-          "Unified design systems improved brand recognition and usability."
+        image: "/design1.png",
       },
       {
-        image: "/portfolio1.png",
-        heading: "4x",
-        title: "Engagement Lift",
-        description:
-          "Interactive UI elements increased time-on-site and user interaction."
+        image: "/design2.png",
       },
       {
-        image: "/portfolio2.png",
-        heading: "2x",
-        title: "Visual Impact",
-        description:
-          "High-impact visuals and micro-interactions enhanced user experience."
+        image: "/design3.png",
       }
     ]
   },
   {
     id: "Development",
-    label: "Development",
+    label: "Web Development",
     items: [
       {
-        image: "/portfolio1.png",
-        heading: "99.9%",
-        title: "Uptime Reliability",
-        description:
-          "Robust architecture and optimized builds ensure stable performance."
+        image: "/custom1.png"
       },
       {
-        image: "/portfolio2.png",
-        heading: "50%",
-        title: "Load Time Reduction",
-        description:
-          "Modern tooling and code-splitting drastically reduced load times."
+        image: "/custom2.png"
       },
       {
-        image: "/portfolio1.png",
-        heading: "Scalable",
-        title: "Future Ready",
-        description:
-          "Built with scalability and maintainability at the core."
+        image: "/custom3.png"
       }
     ]
   }
@@ -147,8 +111,21 @@ export default function Portfolio({ data }: any) {
                       className={`expand-item ${
                         hoveredIndex === index ? "active" : ""
                       }`}
-                      onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(0)}
+                      onMouseEnter={() => {
+      if (window.innerWidth > 767) {
+        setHoveredIndex(index);
+      }
+    }}
+                      onMouseLeave={() => {
+      if (window.innerWidth > 767) {
+        setHoveredIndex(0);
+      }
+    }}
+     onClick={() => {
+      if (window.innerWidth <= 767) {
+        setHoveredIndex(index);
+      }
+    }}
                     >
                       <img
                         src={item.image}

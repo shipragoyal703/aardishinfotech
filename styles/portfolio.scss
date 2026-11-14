@@ -101,7 +101,12 @@ section.portfolio-sec {
     }
   }
 }
-
+.hover-expand-sec .expand-wrapper .expand-item {
+    border:3px solid #b279f9;
+}
+.hover-expand-sec .expand-wrapper .expand-item.active {
+    border: 3px solid #29115d;
+}
 /* ================= EXPAND SECTION ================= */
 .hover-expand-sec {
   padding-top: 24px;
@@ -194,6 +199,95 @@ section.portfolio-sec {
           flex: unset;
         }
       }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .portfolio-sec {
+    .hover-expand-sec {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .expand-wrapper {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      gap: 15px;
+    }
+
+    .expand-item {
+      position: relative !important;
+      display: block !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important;
+      min-height: 220px !important;
+      max-height: none !important;
+      flex: 0 0 110px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: hidden !important;
+      border-radius: 25px;
+      transition: height 0.4s ease;
+    }
+
+    .expand-item.active {
+      width: 100% !important;
+      height: 360px !important;
+      min-height: 360px !important;
+      flex: 0 0 360px !important;
+    }
+
+    .expand-img {
+      position: absolute !important;
+      inset: 0;
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .work-column-text {
+      position: absolute !important;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: auto !important;
+      width: 100%;
+      padding: 20px 22px;
+      box-sizing: border-box;
+      color: #fff;
+      background: linear-gradient(
+        to top,
+        rgba(8, 15, 30, 0.98) 0%,
+        rgba(8, 15, 30, 0.65) 65%,
+        transparent 100%
+      );
+    }
+
+    .work-column-text-heading {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .work-column-text-desc {
+      font-size: 23px;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .work-column-text-para {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 0;
     }
   }
 }
