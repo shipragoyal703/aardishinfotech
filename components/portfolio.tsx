@@ -129,7 +129,7 @@ export default function Portfolio({ data }: any) {
                     >
                       <img
                         src={item.image}
-                        alt={item.title}
+                        alt="Portfolios"
                         className="expand-img"
                       />
 
