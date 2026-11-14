@@ -386,3 +386,14 @@ h4.title-txt strong {
     }
   }
 }
+
+
+
+/* Mobile accordion auto-scroll positioning */
+@media screen and (max-width: 991px) {
+  .services {
+    .accordian-item {
+      scroll-margin-top: 100px;
+    }
+  }
+}

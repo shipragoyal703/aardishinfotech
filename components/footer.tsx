@@ -18,10 +18,11 @@ export default function Footer() {
               priority
             />
             </Link>
+            <p className="footer-info">Aardish Infotech is a full-service web development, UI/UX design, eCommerce, and SEO agency helping businesses worldwide build scalable digital experiences.</p>
           </div>
         </div>
 
-      <div className="col-sm-3">
+      <div className="col-sm-3 links">
         <h3>QUICK LINKS</h3>
         <nav>
           <ul>
@@ -34,11 +35,11 @@ export default function Footer() {
         </div>
         <div className="col-sm-3 contact">
             <h3>CONTACT</h3>
-            <Link href="mailto:info.aardishinfotech.com">info.aardishinfotech.com</Link>
-            <Link href="tel:8054071080">8054071080</Link>
+            <Link href="mailto:info@aardishinfotech.com">info@aardishinfotech.com</Link>
+            <Link href="tel:8054071080">+91 8054071080</Link>
             <p>Social Links</p>
             <ul>
-                <li><Link href="#">
+                <li><Link href="https://www.facebook.com/profile.php?id=61561567937992" target="_blank">
               <Image
               src="/fb.png"
               width={30}
@@ -46,19 +47,14 @@ export default function Footer() {
               alt="facebook"
             />
             </Link></li>
-                  <li><Link href="#"><Image
-              src="/twt.png"
-              width={30}
-              height={30}
-              alt="twitter"
-            /></Link></li>
-                    <li><Link href="#"><Image
+                 
+                    <li><Link href="https://www.instagram.com/aardishinfotech/" target="_blank"><Image
               src="/insta.png"
               width={30}
               height={30}
               alt="instagram"
             /></Link></li>
-                      <li><Link href="#"><Image
+                      <li><Link href="https://www.linkedin.com/company/99796917/" target="_blank"><Image
               src="/linkdin.png"
               width={24}
               height={24}
@@ -70,10 +66,11 @@ export default function Footer() {
             <div className="newsletter">
                 <h3>Sign Up to our Newsletter!</h3>
                 <div className="form">
+                  
                     <form>
                         <div className="input-group">
                             <input type="email" placeholder="Email address" />
-                            <button type="button">Book a Demo</button>
+                            <button type="button">Subscribe</button>
                         </div>
                     </form>
                 </div>

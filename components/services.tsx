@@ -2,16 +2,43 @@
 "use client";
 
 import "@/styles/services.scss";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 
 export default function Services({ data }: any) {
   const [active, setActive] = useState(0);
 
   const services = useMemo(() => buildServices(data, 6), [data]);
 
+  // Store accordion element references
+  const accordionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Track whether the change came from a user click
+  const shouldScroll = useRef(false);
+
   const handleClick = (index: number) => {
+    shouldScroll.current = true;
     setActive(index);
   };
+
+  // Scroll selected accordion into view on mobile
+  useEffect(() => {
+    if (!shouldScroll.current) return;
+
+    shouldScroll.current = false;
+
+    if (window.innerWidth <= 991) {
+      const selectedItem = accordionRefs.current[active];
+
+      if (selectedItem) {
+        requestAnimationFrame(() => {
+          selectedItem.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        });
+      }
+    }
+  }, [active]);
 
   return (
     <section className="services">
@@ -45,8 +72,13 @@ export default function Services({ data }: any) {
                   {services.map((item, index) => (
                     <div
                       key={index}
+                      ref={(el) => {
+                        accordionRefs.current[index] = el;
+                      }}
                       className={`accordian-item ${
-                        active === index ? "active open-default" : ""
+                        active === index
+                          ? "active open-default"
+                          : ""
                       }`}
                       onClick={() => handleClick(index)}
                     >
@@ -82,7 +114,6 @@ export default function Services({ data }: any) {
                                 />
                               )}
 
-                              
                             </div>
                           </div>
                         </>

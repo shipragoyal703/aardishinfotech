@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import "@/styles/digital-partner.scss";
 
@@ -93,7 +93,7 @@ export default function DigitalPartner() {
                         </span>
                       </span>
                     </h2>
-                    <p>14 days support</p>
+                    <p>14 days post-launch support</p>
                   </div>
                   <div className="left-col-2">
                     <div className="counter">
@@ -110,7 +110,7 @@ export default function DigitalPartner() {
 
                   </div>
                   <div className="left-col-3">
-                    <img src="/toggle.png" />
+                    <Link href="/contact"><img src="/toggle.png" /></Link>
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -126,7 +126,7 @@ export default function DigitalPartner() {
                       <div className="content">
                         <img src="/txt-2.png" />
                         <h3> End-to-End Services</h3>
-                        <p> We build solutions that grow with your business.</p>
+                        <p> Unified strategy, design, development, and SEO under one roof.</p>
                       </div>
 
                     </div>
@@ -134,8 +134,8 @@ export default function DigitalPartner() {
                     <div className="center2">
                       <div className="content">
                         <img src="/txt-3.png" />
-                        <h3> Scalable & Future-Proof</h3>
-                        <p> We build solutions that grow with your business.</p>
+                        <h3> Scalable & Future-Proof Architecture</h3>
+                        <p> Built on modern tech stacks that grow effortlessly alongside your business.</p>
                       </div>
                     </div>
                   </div>
@@ -156,11 +156,11 @@ export default function DigitalPartner() {
                       <span className="plus">+</span>
                     </div>
 
-                    <img src="/Prompt.png" />
+                    <img src="/Prompt-img.png" />
                   </div>
                   <div className="col-right-3">
-                    <p>Industries Served </p>
-                    <span>Startups • Enterprises • Nonprofits • Agencies • eCommerce</span>
+                    <p>Industries We Serve </p>
+                    <span>Startups • Enterprises Organization •  Nonprofits • Agencies • eCommerce brands</span>
                     <img src="/Frame.png" />
                   </div>
                 </div>
