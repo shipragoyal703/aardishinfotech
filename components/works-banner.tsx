@@ -2,6 +2,7 @@ import Image from "next/image";
 import "../styles/BannerAnimation.scss";
 import "@/styles/banner.scss";
 
+
 export default function WorksAnimation() {
   return (
     <>
@@ -9,25 +10,24 @@ export default function WorksAnimation() {
         <div className="container">
           <div className="row">
             <div className="col-lg-7 banner-content">
-              <span className="title-btn">How it Works</span>
+              <span className="title-btn">OUR PROCESS & WORKFLOW</span>
 
               <h1>
-                Our Proven Process Built
-                <span>Around You</span>
+               How We Turn Your Digital Vision Into a  
+                <span> High-Performing Product</span>
               </h1>
 
               <p>
-                We follow a clear, collaborative process to deliver digital
-                solutions that drive real results.
+                Great digital products don’t happen by accident. Our transparent, sprint-based delivery framework eliminates guesswork, prevents scope creep, and delivers custom websites, eCommerce stores, and web applications 3X faster than traditional agencies—with full visibility at every milestone.
               </p>
 
               <div className="buttons">
-                <a href="/" className="primary-button">
-                  Get Demo
+                <a href="https://calendly.com/akshays103/15min?month=2026-11" target="_blank" className="primary-button">
+                 Start Your Project
                 </a>
 
-                <a href="/" className="secondary-button">
-                  get started
+                <a href="/contact#contactform" className="secondary-button">
+                  Get a Free Quote
                 </a>
               </div>
             </div>

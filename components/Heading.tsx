@@ -7,10 +7,10 @@ export default function Heading() {
             <div className="col-sm-12">
                 <h3>What we do</h3>
                 <h4>
-                  Comprehensive <span>IT Services</span> To Accelerate<br></br> Your Business Day One
+                 Full-Lifecycle Digital Solutions  <span>Under One Roof</span> 
                 </h4>
                 <p>
-                  From strategy to execution, we deliver end-to-end solutions tailored to your goals and industry.
+                 Eliminate the friction of managing multiple vendors. We combine UI/UX strategy, clean full-stack engineering, and data-driven SEO to turn your digital presence into a reliable revenue engine.
                 </p>
             </div>
           </div>

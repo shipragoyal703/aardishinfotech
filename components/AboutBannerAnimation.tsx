@@ -2,6 +2,7 @@
 import Image from "next/image";
 import "../styles/BannerAnimation.scss";
 import "@/styles/banner.scss";
+import Link from "next/link";
 
 export default function AboutAnimation() {
 
@@ -11,23 +12,24 @@ export default function AboutAnimation() {
       <div className="container">
         <div className="row">
           <div className="col-lg-7 banner-content">
-            <span className="title-btn">About us</span>
+            <span className="title-btn">ABOUT AARDISH INFOTECH</span>
 
             <h1>
-             We Build Digital Solutions That Drive
-              <span>Real Impact</span>
+            Engineering Scalable Digital Solutions for&nbsp;
+
+               <span>Ambitious Businesses</span>
             </h1>
 
-            <p>At aardish Infotech, we're more than a digital agency we're your technology partner. We combine innovation, expertise, and passion to help businesses grow in a digital-first world.  </p>
+            <p>We are a full-service IT solutions, custom web development, and digital growth company helping startups, agencies, and enterprises turn complex ideas into high-performing digital products. From custom code to search engine dominance, we build technology that drives measurable revenue. </p>
 
             <div className="buttons">
-              <a href="/" className="primary-button">
-              Get Connect
-              </a>
+              <Link href="https://calendly.com/akshays103/15min" className="primary-button" target="_blank">
+              Book a Free Strategy Call
+              </Link>
 
-              <a href="/" className="secondary-button">
-                Get Started
-              </a>
+              <Link href="/case-studies" className="secondary-button">
+               View Our Case Studies
+              </Link>
             </div>
           </div>
 

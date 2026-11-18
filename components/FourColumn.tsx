@@ -3,27 +3,27 @@ import Image from "next/image";
 const values = [
 {
     image: "/innovation.png",
-    title: "Innovation",
+    title: "Built for Speed, SEO & Accessibility",
     description:
-      "We embrace new ideas and technologies to build future-ready solutions.",
+      "A great website means nothing if customers can't find or use it. Every platform we build is engineered from day one for Google Core Web Vitals, technical SEO readiness, and 100% WCAG/ADA accessibility compliance.",
   },
   {
     image: "/collab.png",
-    title: "Collaboration",
+    title: "True End-to-End Execution",
     description:
-      "We believe in transparency, honesty, and doing what's right for our clients.",
+      "Stop juggling separate vendors for design, development, CRM integration, and search optimization. Our cross-functional team handles your entire digital lifecycle—from initial wireframes to post-launch scaling.",
   },
   {
     image: "/integrity.png",
-    title: "Integrity",
+    title: "Seamless Tech Stack Integration",
     description:
-      "We work as an extension of your team, invested in your success.",
+      "We connect your website and apps with 100+ essential business platforms—including HubSpot, Apollo, payment gateways, and marketing automation tools—so your operations run without friction.",
   },
   {
     image: "/excel.png",
-    title: "Excellence",
+    title: "Transparent Milestones & Post-Launch Support",
     description:
-      "We are commited to delivering esceptional quality in everything we do.",
+      "No black-box development or surprise delays. You get clear sprint updates, direct communication with your project team, and 14 days of complimentary post-launch technical support on every build.",
   },
 
 ];
@@ -33,11 +33,11 @@ export default function FourColumn() {
     <section className="values-section guide">
       <div className="container">
         <div className="section-heading">
-          <span className="value">OUR VALUES</span>
+          <span className="value">Why Partner With Us</span>
           <h2>
-           The Principles That <span>Guide Us</span>
+           THE AARDISH  <span>ADVANTAGE</span>
           </h2>
-          <p>Our principles shape every decision we make, every solution we deliver, and every relationship we build. They inspire us to create meaningful results with integrity, innovation, and excellence.</p>
+          <p>Why Growing Brands Choose Aardish Infotech</p>
         </div>
 
         <div className="row g-4">

@@ -7,6 +7,17 @@ import StatsCounter from "@/components/StatsCounter";
 import FourColumn from "@/components/FourColumn";
 import Services from "@/components/services";
 import Heading from "@/components/Heading";
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Web Development, eCommerce & SEO Services | Aardish Infotech",
+  description:
+    "Explore end-to-end web development, eCommerce, custom software, UI/UX design, and technical SEO services from Aardish Infotech. Scalable digital solutions built for growth. Get a free quote.",
+};
+
+
+
 
 export default async function ServicesPage() {
   const page = await fetchAPI("/wp/v2/pages/22");
@@ -24,44 +35,88 @@ export default async function ServicesPage() {
                   <div className="col-sm-3">
                       <div className="service-box">
                           <div className="img">
-                              <Image src="/ui.webp" alt="UI/Ux Design" width={100} height={100} />
+                              <Image src="/custom-web.png" alt="Custom Website Development" width={100} height={100} />
                           </div>
                           <div className="detail">
-                              <h3>UI/UX Design</h3>
-                              <p>Beautiful, intuitive designs that create meaningful user experiences.</p>
+                              <h3>Custom Website <br />  Development</h3>
+                              <p>Fast, responsive, and conversion-engineered websites tailored to your brand identity and business objectives.</p>
                           </div>
                       </div>
                   </div>
                   <div className="col-sm-3">
                       <div className="service-box">
                           <div className="img">
-                              <Image src="/web.webp" alt="Web Development" width={100} height={100} />
+                              <Image src="/seo.png" alt="SEO" width={100} height={100} />
                           </div>
                           <div className="detail">
-                              <h3>Web Development</h3>
-                              <p>High-performance websites and web applications built with modern technologies.</p>
+                              <h3>Technical & Growth Search Engine Optimization (SEO)</h3>
+                              <p>Capture high-intent organic search traffic, outrank competitors, and turn search visibility into qualified leads.</p>
                           </div>
                       </div>
                   </div>
                   <div className="col-sm-3">
                       <div className="service-box">
                           <div className="img">
-                              <Image src="/cart-light.webp" alt="eCommerce Solutions" width={100} height={100} />
+                              <Image src="/ecom.webp" alt="eCommerce Solutions" width={100} height={100} />
                           </div>
                           <div className="detail">
-                              <h3>eCommerce Solutions</h3>
-                              <p>Scalable eCommerce platforms that drive sales and customer loyalty.</p>
+                              <h3>eCommerce Website Development</h3>
+                              <p>High-converting online stores engineered to maximize average order value, streamline checkout, and scale effortlessly.</p>
                           </div>
                       </div>
                   </div>
                   <div className="col-sm-3">
                       <div className="service-box">
                           <div className="img">
-                              <Image src="/mobile-light.webp" alt="Mobile App Development" width={100} height={100} />
+                              <Image src="/custom-web.png" alt="Web & Custom Application" width={100} height={100} />
                           </div>
                           <div className="detail">
-                              <h3>Mobile App Development</h3>
-                              <p>Custom mobile applications for iOS and Android that users love.</p>
+                              <h3>Web & Custom Application Development</h3>
+                              <p>Bespoke web applications, SaaS platforms, and custom API integrations built to automate workflows.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="col-sm-3">
+                      <div className="service-box">
+                          <div className="img">
+                              <Image src="/UI_UX.webp" alt="Professional UI/UX" width={100} height={100} />
+                          </div>
+                          <div className="detail">
+                              <h3>Professional UI/UX & <br /> Digital Design</h3>
+                              <p>Intuitive, human-centered interfaces and scalable design systems that turn casual visitors into loyal customers.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="col-sm-3">
+                      <div className="service-box">
+                          <div className="img">
+                              <Image src="/perform.webp" alt="Website Performance" width={100} height={100} />
+                          </div>
+                          <div className="detail">
+                              <h3>Website Performance & <br />Technical Support</h3>
+                              <p>Proactive monitoring, speed optimization, and dedicated ongoing support to keep your digital platforms fast, secure, and online 24/7.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="col-sm-3">
+                      <div className="service-box">
+                          <div className="img">
+                              <Image src="/mobile.png" alt="Mobile App Development" width={100} height={100} />
+                          </div>
+                          <div className="detail">
+                              <h3>Mobile App <br /> Development</h3>
+                              <p>We design and develop custom iOS and Android apps with intuitive interfaces and smooth performance.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="col-sm-3">
+                      <div className="service-box">
+                          <div className="img">
+                              <Image src="/cms.webp" alt="CMS Website Development" width={100} height={100} />
+                          </div>
+                          <div className="detail">
+                              <h3>CMS Website <br /> Development</h3>
+                              <p>We create flexible, responsive websites powered by content management systems like WordPress, Shopify, or custom CMS platforms.</p>
                           </div>
                       </div>
                   </div>
@@ -83,10 +138,7 @@ export default async function ServicesPage() {
         transparency, efficiency, and exceptional results.
       </p>
 
-      <a href="#" className="process-btn">
-        Get Started
-        <span>→</span>
-      </a>
+     
     </div>
 
     <div className="process-steps">
@@ -118,8 +170,7 @@ export default async function ServicesPage() {
         <h3>Discover</h3>
 
         <p>
-          We understand your goals, challenges, and opportunities.
-        </p>
+We learn about your business, audience, goals, and challenges to identify opportunities and define what success looks like for your project.        </p>
       </div>
 
       <div className="process-step">
@@ -146,11 +197,10 @@ export default async function ServicesPage() {
 
       
 
-        <h3>Plan</h3>
+        <h3>Strategize</h3>
 
         <p>
-          We create a tailored strategy and roadmap for success.
-        </p>
+We turn insights into action with a tailored strategy, clear project milestones, and the right technology to build a solution around your business needs.        </p>
       </div>
 
       <div className="process-step">
@@ -190,7 +240,8 @@ export default async function ServicesPage() {
         <h3>Build</h3>
 
         <p>
-          Our team designs and develops scalable solutions.
+Our team brings your vision to life through intuitive design, clean development, and scalable technology — creating digital experiences that engage users and drive results.
+
         </p>
       </div>
 
@@ -223,15 +274,17 @@ export default async function ServicesPage() {
 
        
 
-        <h3>Deliver</h3>
+        <h3> Launch & Grow</h3>
 
         <p>
-          We launch, optimize, and support for long-term growth.
-        </p>
+We take your solution live, monitor performance, and provide ongoing support and optimization to keep your digital presence secure, competitive, and ready to scale.        </p>
       </div>
 
     </div>
-
+ <a href="https://calendly.com/akshays103/15min?month=2026-11" target="_blank" className="process-btn">
+        Get Started
+        <span>→</span>
+      </a>
   </div>
 </section>
   <section className="why-choose">

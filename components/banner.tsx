@@ -51,15 +51,29 @@ export default function Banner({
   />
 </div>
 
-            <div className="buttons">
-              <Link href="https://calendly.com/akshays103/15min" className="primary-button" target="_blank">
-               {data.demo_link_text}
-              </Link>
+           <div className="buttons">
+  {data.demo_link && data.demo_link_text && (
+    <Link
+      href={data.demo_link}
+      className="primary-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {data.demo_link_text}
+    </Link>
+  )}
 
-              <Link href="/services" className="secondary-button">
-                {data.get_started_text}
-              </Link>
-            </div>
+  {data.get_started && data.get_started_text && (
+    <Link
+      href={data.get_started}
+      className="secondary-button"
+      
+      rel="noopener noreferrer"
+    >
+      {data.get_started_text}
+    </Link>
+  )}
+</div>
           </div>
 
           <div className="col-lg-5 banner-image">

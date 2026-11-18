@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import "@/styles/portfolio.scss";
+import Link from "next/link";
 
 interface PortfolioItem {
   image: string;
@@ -167,6 +168,7 @@ export default function Portfolio({ data }: any) {
                   ))}
 
                 </div>
+                <Link className="secondary-button process-btn" rel="noopener noreferrer" href="/case-studies">View All Case Studies <span>→</span></Link>
               </div>
             )}
           </div>

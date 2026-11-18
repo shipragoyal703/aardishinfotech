@@ -7,14 +7,12 @@ export default function ImageText() {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-              <h4>Our Story</h4>
+              <h4>WHO WE ARE</h4>
                 <h3>
-                  Helping Businesses Thrive Since <span>Day One</span>
+                 Bridging the Gap Between Technical Excellence and  <span>Business Growth</span>
                 </h3>
                 <p>
-                  At aardish Infotech, we're more than a digital agency we're
-                  your technology partner. We combine innovation, expertise, and
-                  passion to help businesses grow in a digital-first world.
+                  Aardish Infotech was founded to eliminate the compromise. We bring strategy, UI/UX design, full-stack web and application development, eCommerce engineering, and technical SEO together under one roof. Whether you are launching an MVP, replatforming a high-volume eCommerce store, or automating workflows with custom API integrations, we act as your dedicated technical partner—focused relentlessly on speed, accessibility, and bottom-line results.
                 </p>
             </div>
             <div className="col-lg-6 col-md-12">

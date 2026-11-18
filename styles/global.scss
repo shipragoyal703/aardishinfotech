@@ -14,7 +14,7 @@ p,
 span,
 a,
 button {
-  font-family: var(--font-inter), sans-serif;
+  font-family: "Inter", sans-serif;
 }
 section.image-text ,section.values-section{
     background-color: #fff;
@@ -692,19 +692,18 @@ section.what-do-sec {
 }
 
 .service-box h3 {
-   
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 30px;
     margin-top: 16px;
     margin-bottom: 16px;
+    min-height: 60px;
 }
 
 .service-box .detail p {
     font-size: 16px;
     color: #6B6B6B;
-    font-size: 18px;
-    line-height: 26px;
+    line-height: 28px;
 
 }
 .service-box:hover img {
@@ -1371,26 +1370,24 @@ $color_5: #aaa3ba;
 	}
 }
 .process-container {
-	width: min(1180px, calc(100% - 40px));
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: 0.85fr 1.8fr;
-	gap: 70px;
-	position: relative;
-	z-index: 2;
+    width: min(1180px, 100% - 40px);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 .process-intro {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
 	h2 {
 		margin: 0;
-		max-width: 420px;
 		font-size: clamp(36px, 4vw, 52px);
 		line-height: 1.08;
 		font-weight: 600;
 		letter-spacing: -1.5px;
-      
+      	text-align: center;
 		span {
 			display: block;
 			background: linear-gradient( 90deg, #8b5cf6, #c084fc );
@@ -1400,12 +1397,12 @@ $color_5: #aaa3ba;
 		}
 	}
 	p {
-		max-width: 430px;
+		
 		margin: 22px 0 30px;
 		color: $color_2;
 		font-size: 16px;
 		line-height: 1.7;
-
+text-align: center;
 	}
 }
 .process-label {
@@ -1417,12 +1414,11 @@ $color_5: #aaa3ba;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 4px;
-    margin-bottom: 25px;
     background: rgba(124, 58, 237, 0.04);
-   
+    margin: 0 auto 25px;
 }
 .process-btn {
-	display: inline-flex;
+	display: table;
 	align-items: center;
 	gap: 15px;
 	width: fit-content;
@@ -1431,7 +1427,7 @@ $color_5: #aaa3ba;
 	background: linear-gradient( 100deg, #713cff, #bc73ff );
 	color: $color_1;
 	font-size: 16px;
-    
+    margin: 65px auto 0;
 	font-weight: 500;
 	text-decoration: none;
 	box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
@@ -1450,15 +1446,16 @@ $color_5: #aaa3ba;
 	}
 }
 .process-steps {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 25px;
-	align-items: start;
+    gap: 25px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
 }
 .process-step {
 	min-width: 0;
 	transition: transform 0.3s ease;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
+    width: 100%;
 	h3 {
 		margin: 4px 0 10px;
 		font-size: 25px;
@@ -1467,10 +1464,9 @@ $color_5: #aaa3ba;
 	}
 	p {
 		margin: 0;
-		max-width: 145px;
 		color: $color_5;
-		font-size: 14px;
-		line-height: 1.55;
+		font-size: 16px;
+		line-height: 28px;
 	}
 	&:hover {
 		transform: translateY(-5px);
@@ -1681,7 +1677,7 @@ $border-color_1: #c8a5fa;
         letter-spacing: -1.8px;
 
 		span {
-			display: block;
+			display: inline-block;
 			background: linear-gradient(90deg, #6335f0, #b97ffb);
              -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -2010,7 +2006,7 @@ $border-color_1: rgba(173, 117, 255, .6);
 		line-height: 1.1;
 		letter-spacing: -1.5px;
 		span {
-			display: block;
+			display: inline-block;
 			background: linear-gradient(90deg, #6335f0, #b97ffb);
             -webkit-text-fill-color: rgba(0, 0, 0, 0);
             -webkit-background-clip: text;
@@ -2124,7 +2120,7 @@ $color_7: #5b2da1;
     font-family: "Inter", sans-serif;
     color: #270f5c;
 		span {
-			display: block;
+			display: inline-block;
 			    background: linear-gradient(90deg, #6335f0, #b97ffb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -3943,17 +3939,21 @@ article.case-study-card {
 		height: auto;
 	}
 	span.case-study-tag {
-		font-size: 18px;
-		margin-top: 20px;
-		display: block;
+		    font-size: 16px;
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 15px;
 	}
 	h2 {
 		color: $color_1;
 		a {
 			color: $color_1;
-			font-size: 24px;
+			font-size: 22px;
 			text-decoration: unset;
-			text-transform: uppercase;
+			line-height: 27px;
+			display: block;
+			min-height: 60px;
+			font-weight: bold;
 		}
 	}
 }

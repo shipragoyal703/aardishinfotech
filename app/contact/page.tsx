@@ -294,7 +294,7 @@ export default function ContactPage() {
   </div>
 </section>
 
-<section className="contact-form-section">
+<section className="contact-form-section" id="contactform">
 
   <div className="contact-form-container">
 
