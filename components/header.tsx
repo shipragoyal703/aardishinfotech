@@ -1,13 +1,17 @@
+
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
-import "@/styles/header.scss";
 import Link from "next/link";
+import "@/styles/header.scss";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);   // ✅ menu
- 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <header className="header">
@@ -17,7 +21,7 @@ export default function Header() {
           {/* LOGO */}
           <div className="col-sm-3">
             <div className="logo">
-              <Link href="/">
+              <Link href="/" onClick={closeMenu}>
                 <Image
                   src="/logo.png"
                   width={162}
@@ -33,37 +37,59 @@ export default function Header() {
           <div className={`col-sm-9 nav-wrapper ${menuOpen ? "open" : ""}`}>
             <nav>
               <ul>
-                <li><Link href="/about">About us</Link></li>
-                 <li><Link href="/services">Services </Link></li>
-                  <li><Link href="/how-it-works">How It Works</Link></li>
-                  <li><Link href="/case-studies">Case Studies</Link></li>
-                   <li><Link href="/blogs">Blogs</Link></li>
-                    <li><Link href="/contact">Contact Us </Link></li>
-                {/* {menu?.map((item) => (
-                 <li key={`${item.id}-${item.url}`} className={item.classes}>
-                    <Link href={item.url} onClick={() => setMenuOpen(false)}>
-                      {item.title}
-                    </Link>
-                  </li>
-                ))} */}
-
-                {/* ✅ Demo Button */}
-                <li className="demo-button">
-                  <Link href="/contact#contactform">
-                   Get a free quote
-
+                <li>
+                  <Link href="/about" onClick={closeMenu}>
+                    About us
                   </Link>
                 </li>
 
+                <li>
+                  <Link href="/services" onClick={closeMenu}>
+                    Services
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="/how-it-works" onClick={closeMenu}>
+                    How It Works
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="/case-studies" onClick={closeMenu}>
+                    Case Studies
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="/blogs" onClick={closeMenu}>
+                    Blogs
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="/contact" onClick={closeMenu}>
+                    Contact Us
+                  </Link>
+                </li>
+
+                {/* Demo Button */}
+                <li className="demo-button">
+                  <Link href="/contact#contactform" onClick={closeMenu}>
+                    Get a free quote
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>
 
-          
+          {/* HAMBURGER */}
           <button
             className={`hamburger ${menuOpen ? "active" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="main-navigation"
           >
             <span />
             <span />

@@ -721,7 +721,9 @@ section.contact-form h2 {
     font-family: var(--font-lato), sans-serif;
     font-weight: bold;
 }
-
+.value-card .icon img {
+	border-radius: 50%;
+}
 section.contact-form iframe {
     width: 100%;
     overflow: hidden;
@@ -804,6 +806,7 @@ section.contact-form iframe {
 .banner-animation .content p {
     font-size: 12px;
     line-height: 14px;
+	margin-bottom: 0;
 }
 .banner .banner-image .center-orb img {
     width: 190px;

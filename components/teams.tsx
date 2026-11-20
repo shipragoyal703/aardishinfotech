@@ -4,7 +4,7 @@ import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 const values = [
 {
-    image: "/akshay.png",
+    image: "/akshays.png",
     title: "Akshay Sharma",
     description:
       "Founder & CEO",

@@ -173,4 +173,7 @@
 }
 .right-ani .content h3 {
     font-size: 24px;
+    @media(max-width:767px){
+        font-size: 16px;
+    }
 }
