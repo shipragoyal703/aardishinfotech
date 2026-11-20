@@ -3937,7 +3937,10 @@ article.case-study-card {
 	img {
 		width: 100%;
 		height: auto;
+    	
+		  
 	}
+
 	span.case-study-tag {
 		    font-size: 16px;
     margin-top: 20px;
@@ -3952,10 +3955,13 @@ article.case-study-card {
 			text-decoration: unset;
 			line-height: 27px;
 			display: block;
-			min-height: 60px;
+			min-height: 90px;
 			font-weight: bold;
 		}
 	}
+}
+a.case-study-link span {
+    margin-left: 5px;
 }
 section.case-studies-section {
 	font-family: $font-family_1;
@@ -4040,15 +4046,25 @@ article.case-study-content {
     margin: auto;
    
 }
-
-h2.wp-block-heading {
-    font-size: 40px;
+.legalPageHeader h1 {
     font-weight: bold;
+}
+h2.wp-block-heading {
+    font-size: 36x;
+    font-weight: bold;
+	@media(max-width:767px){
+	
+    	font-size: 26px;
+	
+	}
 }
 
 p.wp-block-paragraph {
     font-size: 20px;
     margin-bottom: 30px;
+	@media(max-width:767px){
+		 font-size: 16px;
+	}
 }
 
 h3.wp-block-heading {
@@ -4058,6 +4074,9 @@ h3.wp-block-heading {
 ul.wp-block-list li {
     font-size: 20px;
     padding: 0 0 5px 0;
+	@media(max-width:767px){
+		 font-size: 16px;
+	}
 }
 
 h4.wp-block-heading {
@@ -4190,7 +4209,12 @@ html {
   margin-top: 25px;
   margin-bottom: 10px;
 }
-
+.contact-form-box iframe {
+    border: 0;
+    margin: auto;
+    display: block;
+	width:100%;
+}
 
 /* =========================
    MOBILE
@@ -4211,8 +4235,129 @@ html {
     max-width: 100%;
 }
 }
-@media(max-width:767px){
-	p.wp-block-paragraph {
-    font-size: 18px;
+
+
+/*blogs*/
+$background-color-1: rgba(128, 62, 255, 0.2);
+$background-color-2: #120a25;
+$color-1: #fff;
+$border-color-1: #e6dcf5;
+$box-shadow-color-1: rgba(55, 24, 105, 0.08);
+$color-2: #ffffffeb;
+$background-color-3: #713cff;
+$background-color-4: #bc73ff;
+
+section.single-blog-section {
+  background: radial-gradient(circle at 50% 0, $background-color-1, transparent 45%), $background-color-2;
+  padding-top: 160px;
+  color: $color-1;
+  text-align: center;
+  padding-bottom: 80px;
 }
+
+.blog-breadcrumb {
+  display: block;
+  margin-bottom: 50px;
+}
+
+.single-blog-image {
+  margin-bottom: 50px;
+
+  img {
+    width: 100%;
+    border-radius: 22px;
+  }
+}
+
+article.single-blog-content {
+  text-align: left;
+  padding-right: 40px;
+
+  h1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+.blog-full-content {
+  margin-top: 50px;
+
+  p.wp-block-paragraph {
+    font-size: 18px;
+  }
+}
+
+aside.blog-sidebar {
+  text-align: left;
+  padding: 20px 30px;
+  border: 1px solid $border-color-1;
+  box-shadow: 0 20px 60px $box-shadow-color-1;
+  border-radius: 10px;
+}
+
+.blog-sidebar-box {
+  h3 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-2;
+  }
+
+  a {
+    background: linear-gradient(100deg, $background-color-3, $background-color-4);
+    padding: 10px 27px;
+    display: inline-block;
+    border-radius: 50px;
+    color: $color-1;
+    text-decoration: unset;
+    font-weight: bold;
+	margin-bottom: 20px;
+	h4{
+		    display: inline-block;
+    font-size: 15px;
+	}
+  }
+}
+
+a.primary-button {
+  background: linear-gradient(100deg, $background-color-3, $background-color-4);
+  padding: 10px 27px;
+  display: inline-block;
+  border-radius: 50px;
+  color: $color-1;
+  text-decoration: unset;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+article.case-study-card .case-study-excerpt a.more-link {
+    DISPLAY: NONE;
+}
+article.case-study-card .case-study-excerpt p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.blog-page article.case-study-card img {
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 20px;
+	    border-radius: 20px;
+}
+main.legalPage {
+    background: radial-gradient(circle at 52% 0, rgba(112, 35, 255, 0.35), transparent 32%), radial-gradient(circle at 65% 90%, rgba(100, 25, 255, 0.3), transparent 35%), linear-gradient(115deg, #020207, #060312 45%, #09001e);
+    padding-top: 180px;
+    color: #fff;
+    padding-bottom: 140px;
+	@media(max-width:767px){
+		  padding-bottom: 50px;
+	}
+}
+main.legalPage a {
+    color: #6335f0;
 }

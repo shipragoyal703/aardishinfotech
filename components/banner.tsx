@@ -4,6 +4,8 @@ import AboutAnimation from "@/components/AboutBannerAnimation";
 import ServiceAnimation from "./ServiceBanner";
 import WorksAnimation from "./works-banner";
 import Link from "next/link";
+import ClientLogos from "@/components/ClientLogos";
+
 
 interface BannerProps {
   data: any;
@@ -83,7 +85,8 @@ export default function Banner({
           <div className="col-sm-12 trust-logos">
             <h3>{data.trust_logos}</h3>
             <p> {data.banner_logo_text} </p>
-            <img src={data.logo_images?.url} alt="trust-logos" />
+            
+              <ClientLogos />
           </div>
         </div>
       </div>

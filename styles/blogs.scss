@@ -50,10 +50,14 @@ section.blog-section {
         margin-bottom: 20px;
       }
 
+     a.more-link {
+        display: none;
+      }
       a {
         display: block;
         text-decoration: none;
         color: #fff;
+            margin-top: 10px;
       }
 
       img {
@@ -61,6 +65,7 @@ section.blog-section {
         height: 300px;
         object-fit: cover;
         border-radius: 12px;
+            object-position: top;
       }
 
       h4 {
@@ -77,8 +82,15 @@ section.blog-section {
       p {
         font-size: 16px;
         line-height: 20px;
-        color: #818498;
+        color: rgba(255,255,255,0.5);
+        display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
       }
     }
   }
+}
+.blog-view-all {
+    margin-top: 32px;
 }

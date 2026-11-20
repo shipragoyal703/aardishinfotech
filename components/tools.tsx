@@ -3,8 +3,8 @@
 import "@/styles/tools.scss";
 
 export default function Tools({ data }: any) {
-  const row1 = buildRow(data, "platform", "platform", 5);
-  const row2 = buildRow(data, "platform_row_2", "platform_row2", 5);
+  const row1 = buildRow(data, "platform", "platform", 7);
+  const row2 = buildRow(data, "platform_row_2", "platform_row2", 7);
 
   return (
     <section className="tools-section">
@@ -57,7 +57,7 @@ function buildRow(
   acf: any,
   imagePrefix: string,
   namePrefix: string,
-  count = 5
+  count = 7
 ) {
   const items: any[] = [];
 

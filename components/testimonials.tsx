@@ -55,12 +55,7 @@ export default function TestimonialSec({ data }: any) {
                       </p>
 
                       <div className="testimonial-user">
-                        {item.image?.url && (
-                          <img
-                            src={item.image.url}
-                            alt={item.image.alt || item.name}
-                          />
-                        )}
+                        
 
                         <h4>{item.name}</h4>
                         <span>{item.designation}</span>

@@ -7,6 +7,7 @@ import Link from "next/link";
 
 interface PortfolioItem {
   image: string;
+  portfolio:string;
   heading?: string;
   title?: string;
   description?: string;
@@ -23,27 +24,27 @@ export const WORK_TABS: WorkTab[] = [
     id: "Featured",
     label: "Featured",
     items: [
-      { image: "/feature3.png" },
-      { image: "/feature1.png" },
-      { image: "/feature2.png" },
+      { image: "/feature3.png", portfolio:"https://margaretspeaks.com/" },
+      { image: "/feature1.png", portfolio:"https://providencefinancehub.com.au/"},
+      { image: "/feature2.png" , portfolio:"https://sipped.shop/"},
     ],
   },
   {
     id: "Design",
     label: "UI/UX Design",
     items: [
-      { image: "/design1.png" },
-      { image: "/design2.png" },
-      { image: "/design3.png" },
+      { image: "/design1.png", portfolio:"https://abbott22.com/" },
+      { image: "/design2.png" ,portfolio:"https://wetatiacademy.org/" },
+      { image: "/design3.png" , portfolio:"https://www.home-stretch.com/"},
     ],
   },
   {
     id: "Development",
     label: "Web Development",
     items: [
-      { image: "/custom1.png" },
-      { image: "/custom2.png" },
-      { image: "/custom3.png" },
+      { image: "/custom1.png", portfolio:"#" },
+      { image: "/custom2.png" ,portfolio:"https://flintgroup.au/"},
+      { image: "/custom3.png" ,portfolio:"https://www.eventogy.com/"},
     ],
   },
 ];
@@ -110,6 +111,7 @@ export default function Portfolio({ data }: any) {
                 <div className="expand-wrapper">
 
                   {activeContent.items.map((item, index) => (
+                  
                     <div
                       key={`${activeContent.id}-${index}`}
                       className={`expand-item ${
@@ -131,12 +133,13 @@ export default function Portfolio({ data }: any) {
                         }
                       }}
                     >
+                        <Link href={item.portfolio} target="_blank">
                       <img
                         src={item.image}
                         alt={item.title || "Portfolio project"}
                         className="expand-img"
                       />
-
+</Link>
                       {/* Optional Text Content */}
                       {hoveredIndex === index &&
                         (item.heading ||
@@ -165,6 +168,7 @@ export default function Portfolio({ data }: any) {
                           </div>
                         )}
                     </div>
+
                   ))}
 
                 </div>

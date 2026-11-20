@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "../styles/BannerAnimation.scss";
 import "@/styles/banner.scss";
-
+import ClientLogos from "./ClientLogos";
 
 export default function WorksAnimation() {
   return (
@@ -152,8 +152,10 @@ export default function WorksAnimation() {
             </div>
 
             <div className="col-sm-12 trust-logos">
-              <h3></h3>
-              <img src="/logos.webp" alt="trust-logos" />
+              <h3>Trusted by Startups, Agencies & Growing Global Brands</h3>
+                         <p> We partner with ambitious businesses and agencies to deliver reliable, scalable, and results-driven digital solutions. </p>
+                          <ClientLogos />
+                        
             </div>
           </div>
         </div>

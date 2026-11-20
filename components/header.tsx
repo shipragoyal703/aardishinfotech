@@ -36,7 +36,8 @@ export default function Header() {
                 <li><Link href="/about">About us</Link></li>
                  <li><Link href="/services">Services </Link></li>
                   <li><Link href="/how-it-works">How It Works</Link></li>
-                  <li><Link href="/case-studies">Case Study</Link></li>
+                  <li><Link href="/case-studies">Case Studies</Link></li>
+                   <li><Link href="/blogs">Blogs</Link></li>
                     <li><Link href="/contact">Contact Us </Link></li>
                 {/* {menu?.map((item) => (
                  <li key={`${item.id}-${item.url}`} className={item.classes}>
@@ -48,7 +49,7 @@ export default function Header() {
 
                 {/* ✅ Demo Button */}
                 <li className="demo-button">
-                  <Link href="/contact">
+                  <Link href="/contact#contactform">
                    Get a free quote
 
                   </Link>
