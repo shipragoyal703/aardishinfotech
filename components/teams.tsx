@@ -1,33 +1,36 @@
+
 import Image from "next/image";
 import Link from "next/link";
-import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+
 const values = [
-{
+  {
     image: "/akshays.png",
     title: "Akshay Sharma",
-    description:
-      "Founder & CEO",
+    linkedin: "https://www.linkedin.com/in/akshay-consultant/",
+    mail: "akshays103@gmail.com",
+    description: "Founder & CEO",
   },
   {
     image: "/shipra.png",
     title: "Shipra Goyal",
-    description:
-      "Co Founder & CTO.",
+    linkedin: "https://www.linkedin.com/in/shipra-goyal-29196a212/",
+    mail: "shipra.goyal703@gmail.com",
+    description: "Co Founder & CTO",
   },
   {
     image: "/manish.png",
     title: "Manish",
-    description:
-      "CMO",
+       mail: "manish9101996@gmail.com",
+    description: "CMO",
   },
   {
     image: "/khushi.png",
-    title: "Khushi",
-    description:
-      "UI/UX Lead",
+    title: "Khushi Goyal",
+       mail: "khushigoyalofficial@gmail.com",
+    description: "UI/UX Lead",
   },
-
 ];
 
 export default function Teams() {
@@ -36,15 +39,22 @@ export default function Teams() {
       <div className="container">
         <div className="section-heading">
           <span className="value">OUR TEAM</span>
+
           <h2>
-           The Mind Behind <span>Aardish</span>
+            The Mind Behind <span>Aardish</span>
           </h2>
-          <p>Our talented team of designers, developers, and strategists works together to turn ideas into powerful digital solutions. We are committed to delivering quality, innovation, and exceptional results for every client.</p>
+
+          <p>
+            Our talented team of designers, developers, and strategists works
+            together to turn ideas into powerful digital solutions. We are
+            committed to delivering quality, innovation, and exceptional
+            results for every client.
+          </p>
         </div>
 
         <div className="row g-4">
           {values.map((item, index) => (
-            <div className="col-lg-3 col-md-6" key={index}>
+            <div className="col-lg-3 col-md-6" key={item.title}>
               <div className="value-card">
                 <div className="icon">
                   <Image
@@ -58,10 +68,31 @@ export default function Teams() {
                 <h3>{item.title}</h3>
 
                 <p>{item.description}</p>
-                <ul>
-                    <li><Link href="/">  <FaLinkedinIn /></Link></li>
-                     <li><Link href="/"> <FaXTwitter /></Link></li>
-                      <li><Link href="/"> <MdEmail /></Link></li>
+
+                <ul className="team-social">
+                  {item.linkedin && (
+                    <li>
+                      <Link
+                        href={item.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${item.title} LinkedIn profile`}
+                      >
+                        <FaLinkedinIn />
+                      </Link>
+                    </li>
+                  )}
+
+                  {item.mail && (
+                    <li>
+                      <Link
+                        href={`mailto:${item.mail}`}
+                        aria-label={`Email ${item.title}`}
+                      >
+                        <MdEmail />
+                      </Link>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>

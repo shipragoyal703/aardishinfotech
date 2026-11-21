@@ -3,7 +3,7 @@
 
 import DemoSection from "@/components/demo";
 import Image from "next/image";
-import HubSpotContactForm from "@/components/HubSpotContactForm";
+import Link from "next/link";
 
 
 
@@ -205,7 +205,7 @@ export default function ContactPage() {
         <div>
           <span>Email Us</span>
 
-          <h3>info@aardishinfotech.com</h3>
+          <h3>info@aardishinfotech.in</h3>
 
           <p>
             Send us your project details anytime.
@@ -233,7 +233,7 @@ export default function ContactPage() {
         <div>
           <span>Call Us</span>
 
-          <h3>8054071080</h3>
+          <h3>+91 8054071080</h3>
 
           <p>
             Let's discuss your requirements.
@@ -276,7 +276,7 @@ export default function ContactPage() {
         <div>
           <span>Book A Call</span>
 
-          <h3>Free Consultation</h3>
+          <h3><Link href="https://calendly.com/akshays103/15min" target="_blank">Free Consultation</Link></h3>
 
           <p>
             Tell us about your idea and goals.

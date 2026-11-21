@@ -315,7 +315,7 @@ export default async function WorksPage() {
 
         <div className="collaboration-point">
           <span>✓</span>
-          <div>
+          <div className="collaboration-text">
             <strong>Your Core Objectives</strong>
             <small>
              A brief overview of what you want to build, redesign, or optimize—and the business results you want to achieve.
@@ -325,7 +325,7 @@ export default async function WorksPage() {
 
         <div className="collaboration-point">
           <span>✓</span>
-          <div>
+          <div className="collaboration-text">
             <strong>Brand & Content Assets</strong>
             <small>
               Any existing logos, brand guidelines, copy, or product details (need help with copywriting or branding? Our team can handle that too).
@@ -335,7 +335,7 @@ export default async function WorksPage() {
 
         <div className="collaboration-point">
           <span>✓</span>
-          <div>
+          <div className="collaboration-text">
             <strong>Reference Examples: </strong>
             <small>
              2–3 websites or apps whose design, speed, or functionality you admire.
@@ -345,7 +345,7 @@ export default async function WorksPage() {
 
           <div className="collaboration-point">
           <span>✓</span>
-          <div>
+          <div className="collaboration-text">
             <strong>Your Target Timeline:</strong>
             <small>
              Any upcoming product launches, marketing campaigns, or key deadlines we should plan around.

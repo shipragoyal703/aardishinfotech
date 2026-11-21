@@ -34,6 +34,10 @@
     font-family: var(--font-lato), sans-serif;
     font-weight: bold;
 
+     @media (max-width: 1199px) {
+      font-size: 35px;
+    }
+
     @media (max-width: 767px) {
       font-size: 40px;
     }

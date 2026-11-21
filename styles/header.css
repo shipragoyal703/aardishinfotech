@@ -24,6 +24,7 @@
 }
 .header nav ul li.demo-button {
   margin-left: auto;
+
 }
 .header nav ul li a { 
   color: #fff;
@@ -45,7 +46,7 @@
   font-size: 15.78px;
   text-transform: capitalize;
   letter-spacing: 0;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease; 
 }
 .header nav ul li.demo-button a:hover {
   background: #fff;
