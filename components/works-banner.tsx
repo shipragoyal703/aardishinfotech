@@ -2,6 +2,7 @@ import Image from "next/image";
 import "../styles/BannerAnimation.scss";
 import "@/styles/banner.scss";
 import ClientLogos from "./ClientLogos";
+import Button from "./ui/Button";
 
 export default function WorksAnimation() {
   return (
@@ -22,13 +23,13 @@ export default function WorksAnimation() {
               </p>
 
               <div className="buttons">
-                <a href="https://calendly.com/akshays103/15min?month=2026-11" target="_blank" className="primary-button">
+                <Button  variant="primary" href="https://calendly.com/akshays103/15min" target="_blank" className="primary-button">
                  Start Your Project
-                </a>
+                </Button>
 
-                <a href="/contact#contactform" className="secondary-button">
+                <Button  variant="secondary" href="/contact#contactform" className="secondary-button">
                   Get a Free Quote
-                </a>
+                </Button>
               </div>
             </div>
 

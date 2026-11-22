@@ -44,8 +44,8 @@ header.header.sticky {
       margin: 0;
       align-items: center;
 
-      @media (max-width: 1366px) {
-        gap: 20px;
+      @media (max-width: 1376px) {
+        gap: 10px;
       }
 
       @media (max-width: 1199px) {
@@ -95,8 +95,8 @@ header.header.sticky {
             border: unset;
 
             &:hover {
-              background: #fff;
-              color: #6335f0;
+             
+              color: #fff;
               opacity: 1;
             }
 

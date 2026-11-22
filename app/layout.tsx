@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "../styles/global.scss";
 import Footer from "@/components/footer";
 import Script from "next/script";
+import "../styles/buttons.scss";
 
 const inter = Inter({
   subsets: ["latin"],

@@ -18,25 +18,21 @@ export const dynamic = "force-dynamic";
 
 async function getPrivacyPolicy(): Promise<WordPressPage | null> {
   try {
-    const pages = await fetchAPI(
-      "/wp/v2/pages?slug=privacy-policy"
-    );
+    const pages = await fetchAPI("/wp/v2/pages?slug=privacy-policy");
 
     if (!Array.isArray(pages) || pages.length === 0) {
       console.error("Privacy Policy page not found in WordPress");
       return null;
     }
 
-    return pages[0];
+    return pages[0] as WordPressPage;
   } catch (error) {
     console.error("Privacy Policy API Error:", error);
     return null;
   }
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPrivacyPolicy();
-
+export function generateMetadata(): Metadata {
   return {
     title: "Privacy Policy | Aardish Infotech",
     description:

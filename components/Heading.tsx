@@ -5,7 +5,7 @@ export default function Heading() {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-                <h3>What we do</h3>
+                <span className="subheading">What we do</span>
                 <h4>
                  Full-Lifecycle Digital Solutions  <span>Under One Roof</span> 
                 </h4>

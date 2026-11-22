@@ -9,7 +9,7 @@ export default function NewsletterForm() {
       {/* Brevo configuration */}
       <Script
         id="brevo-config"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
@@ -37,7 +37,6 @@ export default function NewsletterForm() {
       {/* Brevo form */}
       <div className="sib-form newsletter-brevo">
         <div id="sib-form-container">
-
           <div
             id="error-message"
             className="sib-form-message-panel"

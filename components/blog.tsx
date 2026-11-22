@@ -4,15 +4,46 @@
 import Link from "next/link";
 import Image from "next/image";
 import "@/styles/blogs.scss";
+import Button from "./ui/Button";
 
-export default function BlogClient({ data, posts }: any) {
+interface BlogData {
+  blog_subheading?: string;
+  blog_heading?: string;
+  blog_heading_purple?: string;
+  blog_description?: string;
+}
+
+interface WordPressMedia {
+  source_url: string;
+  alt_text?: string;
+}
+
+interface WordPressPost {
+  id: number;
+  slug: string;
+  title: {
+    rendered: string;
+  };
+  excerpt?: {
+    rendered: string;
+  };
+  _embedded?: {
+    "wp:featuredmedia"?: WordPressMedia[];
+  };
+}
+
+interface BlogClientProps {
+  data: BlogData;
+  posts: WordPressPost[];
+}
+
+export default function BlogClient({ data, posts }: BlogClientProps) {
   // Show only latest 3 blogs
   const latestPosts = posts?.slice(0, 3) || [];
 
   return (
     <section className="blog-section">
       <div className="container">
-
         {/* BLOG HEADING */}
         <div className="row">
           <div className="col-sm-12 blog-content">
@@ -31,15 +62,15 @@ export default function BlogClient({ data, posts }: any) {
 
         {/* LATEST BLOGS */}
         <div className="row blog-post">
-          {latestPosts.map((post: any) => {
-            const image =
-              post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-              "/placeholder.jpg";
+          {latestPosts.map((post) => {
+            const featuredMedia =
+              post._embedded?.["wp:featuredmedia"]?.[0];
+
+            const image = featuredMedia?.source_url || "/placeholder.jpg";
 
             return (
               <div className="col-lg-4 col-md-6 col-sm-12" key={post.id}>
                 <article className="blog-card">
-
                   {/* BLOG IMAGE */}
                   <Link
                     href={`/blogs/${post.slug}`}
@@ -47,10 +78,7 @@ export default function BlogClient({ data, posts }: any) {
                   >
                     <Image
                       src={image}
-                      alt={
-                        post._embedded?.["wp:featuredmedia"]?.[0]
-                          ?.alt_text || post.title.rendered
-                      }
+                      alt={featuredMedia?.alt_text || post.title.rendered}
                       width={800}
                       height={500}
                     />
@@ -58,7 +86,6 @@ export default function BlogClient({ data, posts }: any) {
 
                   {/* BLOG CONTENT */}
                   <div className="blog-card-content">
-
                     <h4>
                       <Link href={`/blogs/${post.slug}`}>
                         <span
@@ -83,7 +110,6 @@ export default function BlogClient({ data, posts }: any) {
                     >
                       Read More <span>→</span>
                     </Link>
-
                   </div>
                 </article>
               </div>
@@ -93,11 +119,10 @@ export default function BlogClient({ data, posts }: any) {
 
         {/* VIEW ALL BLOGS */}
         <div className="blog-view-all">
-          <Link href="/blogs" className="primary-button">
+          <Button variant = "primary" href="/blogs" className="primary-button">
             View All Blogs →
-          </Link>
+          </Button>
         </div>
-
       </div>
     </section>
   );

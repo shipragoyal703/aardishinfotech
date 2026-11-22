@@ -5,17 +5,17 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/header.scss";
+import Button from "@/components/ui/Button";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
-
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
-   useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 100);
     };
@@ -31,7 +31,6 @@ export default function Header() {
     <header className={`header ${isSticky ? "sticky" : ""}`}>
       <div className="container">
         <div className="row align-center">
-
           {/* LOGO */}
           <div className="col-sm-3">
             <div className="logo">
@@ -40,20 +39,23 @@ export default function Header() {
                   src="/logo.png"
                   width={162}
                   height={60}
-                  alt="Site Logo"
+                  alt="Aardish Infotech"
                   priority
                 />
               </Link>
             </div>
           </div>
 
-          {/* NAV */}
-          <div className={`col-sm-9 nav-wrapper ${menuOpen ? "open" : ""}`}>
+          {/* NAVIGATION */}
+          <div
+            className={`col-sm-9 nav-wrapper ${menuOpen ? "open" : ""}`}
+            id="main-navigation"
+          >
             <nav>
               <ul>
                 <li>
                   <Link href="/about" onClick={closeMenu}>
-                    About us
+                    About Us
                   </Link>
                 </li>
 
@@ -87,11 +89,15 @@ export default function Header() {
                   </Link>
                 </li>
 
-                {/* Demo Button */}
+                {/* REUSABLE PRIMARY BUTTON */}
                 <li className="demo-button">
-                  <Link href="/contact#contactform" onClick={closeMenu}>
-                    Get a free quote
-                  </Link>
+                  <Button
+                    href="/contact#contactform"
+                    variant="primary"
+                    onClick={closeMenu}
+                  >
+                    Get a Free Quote
+                  </Button>
                 </li>
               </ul>
             </nav>
@@ -99,8 +105,9 @@ export default function Header() {
 
           {/* HAMBURGER */}
           <button
+            type="button"
             className={`hamburger ${menuOpen ? "active" : ""}`}
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen((prev) => !prev)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="main-navigation"
@@ -109,7 +116,6 @@ export default function Header() {
             <span />
             <span />
           </button>
-
         </div>
       </div>
     </header>

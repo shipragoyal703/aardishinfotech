@@ -38,7 +38,7 @@ export default function Teams() {
     <section className="values-section">
       <div className="container">
         <div className="section-heading">
-          <span className="value">OUR TEAM</span>
+          <span className="subheading">OUR TEAM</span>
 
           <h2>
             The Mind Behind <span>Aardish</span>
@@ -53,7 +53,7 @@ export default function Teams() {
         </div>
 
         <div className="row g-4">
-          {values.map((item, index) => (
+          {values.map((item) => (
             <div className="col-lg-3 col-md-6" key={item.title}>
               <div className="value-card">
                 <div className="icon">

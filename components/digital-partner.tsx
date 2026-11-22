@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import "@/styles/digital-partner.scss";
+import Image from "next/image";
 
 export default function DigitalPartner() {
   const countRef = useRef<HTMLSpanElement>(null);
@@ -82,7 +83,7 @@ export default function DigitalPartner() {
               <div className="row">
                 <div className="col-lg-3">
                   <div className="left-col-1">
-                    <img src="/a-logo.png" />
+                    <Image src="/a-logo.png" alt="logo"   width={53} height={47} /> 
                     <h2 className="text-rotate">
                       Effortless Digital
                       <span className="word-wrapper">
@@ -103,14 +104,14 @@ export default function DigitalPartner() {
 
                     <p>Happy Clients <br /> World Wide</p>
                     <div className="image-stack">
-                      <img src="/circle1.png" className="img img-1" alt="users" />
-                      <img src="/circle2.png" className="img img-2" alt="users" />
-                      <img src="/circle3.png" className="img img-3" alt="users" />
+                      <Image src="/circle1.png" className="img img-1" alt="users"  width={62} height={62}  /> 
+                      <Image src="/circle2.png" className="img img-2" alt="users"  width={62} height={62}  /> 
+                      <Image src="/circle3.png" className="img img-3" alt="users"  width={62} height={62}  /> 
                     </div>
 
                   </div>
                   <div className="left-col-3">
-                    <Link href="/contact"><img src="/toggle.png" /></Link>
+                    <Link href="/contact#contactform"><Image src="/toggle.png" alt="toggle"  width={182} height={54} /></Link>
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -118,13 +119,13 @@ export default function DigitalPartner() {
                     <h3>Your Complete <br /> Digital Partner</h3>
                   </div>
                   <div className="middle">
-                    <img src="/code.png" className="code" />
-                    <img src="/circle.png" className="circle" />
+                    <Image src="/code.png" className="code" alt="code"  width={374} height={374}  /> 
+                    <Image src="/circle.png" className="circle" alt="circle"  width={271} height={271} /> 
                   </div>
                   <div className="col-center-2">
                     <div className="center1">
                       <div className="content">
-                        <img src="/txt-2.png" />
+                        <Image src="/txt-2.png" alt="end to end"  width={232} height={66}  /> 
                         <h3> End-to-End Services</h3>
                         <p> Unified strategy, design, development, and SEO under one roof.</p>
                       </div>
@@ -133,7 +134,7 @@ export default function DigitalPartner() {
 
                     <div className="center2">
                       <div className="content">
-                        <img src="/txt-3.png" />
+                        <Image  src="/txt-3.png" alt="scalable"  width={232} height={66}  />
                         <h3> Scalable & Future-Proof Architecture</h3>
                         <p> Built on modern tech stacks that grow effortlessly alongside your business.</p>
                       </div>
@@ -156,12 +157,12 @@ export default function DigitalPartner() {
                       <span className="plus">+</span>
                     </div>
 
-                    <img src="/Prompt-img.png" />
+                    <Image src="/Prompt-img.png" alt="Prompt"  width={196} height={34} /> 
                   </div>
                   <div className="col-right-3">
                     <p>Industries We Serve </p>
                     <span>Startups • Enterprises Organization •  Nonprofits • Agencies • eCommerce brands</span>
-                    <img src="/Frame.png" />
+                    <Image src="/Frame.png" alt="Industries"  width={196} height={196}  /> 
                   </div>
                 </div>
               </div>

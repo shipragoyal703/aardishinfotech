@@ -4,6 +4,7 @@ import "../styles/BannerAnimation.scss";
 import "@/styles/banner.scss";
 import Link from "next/link";
 import ClientLogos from "./ClientLogos";
+import Button from "@/components/ui/Button";
 
 export default function AboutAnimation() {
 
@@ -24,13 +25,13 @@ export default function AboutAnimation() {
             <p>We are a full-service IT solutions, custom web development, and digital growth company helping startups, agencies, and enterprises turn complex ideas into high-performing digital products. From custom code to search engine dominance, we build technology that drives measurable revenue. </p>
 
             <div className="buttons">
-              <Link href="https://calendly.com/akshays103/15min" className="primary-button" target="_blank">
+              <Button variant="primary" href="https://calendly.com/akshays103/15min" className="primary-button" target="_blank">
               Book a Free Strategy Call
-              </Link>
+              </Button>
 
-              <Link href="/case-studies" className="secondary-button">
+              <Button variant="secondary" href="/case-studies" className="secondary-button">
                View Our Case Studies
-              </Link>
+              </Button>
             </div>
           </div>
 
