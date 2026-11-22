@@ -2,6 +2,7 @@ header.header.sticky {
     position: sticky;
     padding: 10px;
     background-color: #0f091b;
+    z-index: 99;
 }
 .header {
   position: absolute;
@@ -48,7 +49,7 @@ header.header.sticky {
       }
 
       @media (max-width: 1199px) {
-        gap: 12px;
+        gap: 10px;
       }
 
       li {

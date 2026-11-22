@@ -212,7 +212,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <a href="mailto:info@aardishinfotech.com">
+        <a href="mailto:info@aardishinfotech.in">
           →
         </a>
 

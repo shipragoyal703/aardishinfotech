@@ -32,7 +32,7 @@ export default async function ServicesPage() {
            <Heading />
            <div className="container">
               <div className="row">
-                  <div className="col-sm-3">
+                  <div className="col-lg-3 col-md-4">
                       <div className="service-box">
                           <div className="img">
                               <Image src="/custom-web.png" alt="Custom Website Development" width={100} height={100} />
@@ -43,7 +43,7 @@ export default async function ServicesPage() {
                           </div>
                       </div>
                   </div>
-                  <div className="col-sm-3">
+                  <div className="col-lg-3 col-md-4">
                       <div className="service-box">
                           <div className="img">
                               <Image src="/seo.png" alt="SEO" width={100} height={100} />
@@ -54,7 +54,7 @@ export default async function ServicesPage() {
                           </div>
                       </div>
                   </div>
-                  <div className="col-sm-3">
+                  <div className="col-lg-3 col-md-4">
                       <div className="service-box">
                           <div className="img">
                               <Image src="/ecom.webp" alt="eCommerce Solutions" width={100} height={100} />
@@ -65,7 +65,7 @@ export default async function ServicesPage() {
                           </div>
                       </div>
                   </div>
-                  <div className="col-sm-3">
+                  <div className="col-lg-3 col-md-4">
                       <div className="service-box">
                           <div className="img">
                               <Image src="/custom-web.png" alt="Web & Custom Application" width={100} height={100} />
@@ -76,7 +76,7 @@ export default async function ServicesPage() {
                           </div>
                       </div>
                   </div>
-                  <div className="col-sm-3">
+                  <div className="col-lg-3 col-md-4">
                       <div className="service-box">
                           <div className="img">
                               <Image src="/UI_UX.webp" alt="Professional UI/UX" width={100} height={100} />
@@ -87,7 +87,7 @@ export default async function ServicesPage() {
                           </div>
                       </div>
                   </div>
-                  <div className="col-sm-3">
+                  <div className="col-lg-3 col-md-4">
                       <div className="service-box">
                           <div className="img">
                               <Image src="/perform.webp" alt="Website Performance" width={100} height={100} />
@@ -98,7 +98,7 @@ export default async function ServicesPage() {
                           </div>
                       </div>
                   </div>
-                  <div className="col-sm-3">
+                  <div className="col-lg-3 col-md-4">
                       <div className="service-box">
                           <div className="img">
                               <Image src="/mobile.png" alt="Mobile App Development" width={100} height={100} />
@@ -109,7 +109,7 @@ export default async function ServicesPage() {
                           </div>
                       </div>
                   </div>
-                  <div className="col-sm-3">
+                  <div className="col-lg-3 col-md-4">
                       <div className="service-box">
                           <div className="img">
                               <Image src="/cms.webp" alt="CMS Website Development" width={100} height={100} />

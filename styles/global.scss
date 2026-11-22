@@ -256,10 +256,11 @@ section.values-section .section-heading h2 span {
     padding: 40px;
     border: 1px solid #291e48;
     font-family: var(--font-lato), sans-serif;
+	min-height: 515px;
 }
 
 .value-card h3 {
-    font-size: 24px;
+    font-size: 19px;
     margin-top: 20px;
     margin-bottom: 20px;
     color: #fff;
@@ -681,8 +682,10 @@ section.what-do-sec {
     line-height: 26px;
     max-width: 50%;
     margin: auto;
-
     margin-bottom: 40px;
+	@media(max-width:1199px){
+		 max-width: 100%;
+	}
 }
 
 .service-box {
@@ -945,6 +948,9 @@ section.values-section.guide .value-card p {
 .header nav ul li.demo-button a {
     padding: 20px;
     font-size: 18.78px;
+}
+.value-card {
+    min-height: 436px;
 }
 }
  
@@ -4087,7 +4093,7 @@ article.case-study-content {
     font-weight: bold;
 }
 h2.wp-block-heading {
-    font-size: 36x;
+    font-size: 32px;
     font-weight: bold;
 	@media(max-width:767px){
 	
