@@ -1064,6 +1064,9 @@ $color_8: #b66aff;
 .why-content {
 	 span.subheading{
 		margin: 0 0 16px;
+		@media(max-width:767px){
+			margin: 0 auto 16px;
+		}
 	 }
 	h2 {
 		max-width: 650px;
@@ -1955,7 +1958,7 @@ $border-color_1: #c8a5fa;
 }
 @media (max-width: 700px) {
 	.process-detail {
-		padding: 70px 0 80px;
+		padding: 70px 0 40px;
 	}
 	.process-detail-container {
 		width: calc(100% - 30px);
@@ -2176,6 +2179,9 @@ $color_7: #5b2da1;
 .collaboration-content {
 	.subheading{
 		margin: 0 0 16px;
+		@media(max-width:767px){
+			margin: 0 auto 16px;
+		}
 	}
 	h2 {
 		margin: 20px 0;
@@ -2383,7 +2389,7 @@ $color_7: #5b2da1;
 }
 @media (max-width: 500px) {
 	.collaboration-section {
-		padding: 70px 0;
+		padding: 70px 0 0;
 	}
 	.collaboration-visual {
 		height: 330px;
@@ -2628,6 +2634,9 @@ $border-color_1: #9855f5;
 .contact-form-intro {
 	span.subheading{
 		margin: 0 0 16px;
+		@media(max-width:767px){
+			margin: 0 auto 16px;
+		}
 	}
 	h2 {
 	font-size: 40px;
@@ -2679,7 +2688,7 @@ $border-color_1: #9855f5;
 	}
 	p {
 		margin: 0;
-		color: $color_4;
+		color: #70687b;
 		font-size: 16px;
 		width: 80%;
 	}
@@ -4033,6 +4042,7 @@ main.case-studies-page {
 	padding-bottom: 140px;
 	@media(max-width:767px){
 		padding-bottom: 50px;
+		padding-top: 120px;
 	}
 }
 article.case-study-card {
@@ -4526,6 +4536,9 @@ span.subheading {
     animation: servicesBgMove 5s ease infinite;
 	display: table;
 	margin: 0 auto 16px;
+	@media(max-width:767px){
+		font-size: 14px;
+	}
 }
 span.subheading::before {
     content: "";
@@ -4542,6 +4555,9 @@ span.subheading::before {
     margin: 65px auto 0;
     justify-content: center;
     display: flex;
+	@media(max-width:767px){
+		 margin: 20px auto 0;
+	}
 }
 @keyframes servicesBgMove {
     0% {

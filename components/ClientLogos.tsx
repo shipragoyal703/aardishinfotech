@@ -17,7 +17,7 @@ const logos = [
   {
     name: "HIB",
     src: "/images/logos/hib.png",
-    link:"hibi.ca",
+    link:"https://hordosinsurancebrokers.ca/",
   },
   {
     name: "Abbott Print Sign Design",
