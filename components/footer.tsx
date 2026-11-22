@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
         <div className="col-sm-3 contact">
             <h3>CONTACT</h3>
-            <Link href="mailto:info@aardishinfotech.com">info@aardishinfotech.com</Link>
+            <Link href="mailto:info@aardishinfotech.in">info@aardishinfotech.in</Link>
             <Link href="tel:8054071080">+91 8054071080</Link>
             <p>Social Links</p>
             <ul>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import "../styles/BannerAnimation.scss";
 import "@/styles/banner.scss";
 import ClientLogos from "./ClientLogos";
+import Button from "./ui/Button";
 
 export default function WorksAnimation() {
   return (
@@ -22,13 +23,13 @@ export default function WorksAnimation() {
               </p>
 
               <div className="buttons">
-                <a href="https://calendly.com/akshays103/15min?month=2026-11" target="_blank" className="primary-button">
+                <Button  variant="primary" href="https://calendly.com/akshays103/15min" target="_blank" className="primary-button">
                  Start Your Project
-                </a>
+                </Button>
 
-                <a href="/contact#contactform" className="secondary-button">
+                <Button  variant="secondary" href="/contact#contactform" className="secondary-button">
                   Get a Free Quote
-                </a>
+                </Button>
               </div>
             </div>
 
@@ -41,41 +42,45 @@ export default function WorksAnimation() {
                     </div>
                     <div className="hiw-graphic">
                       <div className="hiw-glow"></div>
-                      <svg
-                        className="hiw-process-path"
-                        viewBox="0 0 700 700"
-                        preserveAspectRatio="none"
-                      >
-                        <defs>
-                          <linearGradient
-                            id="hiw-path-gradient"
-                            x1="0%"
-                            y1="100%"
-                            x2="100%"
-                            y2="0%"
-                          >
-                            <stop offset="0%" stop-color="#663cff"></stop>
-                            <stop offset="50%" stop-color="#b45cff"></stop>
-                            <stop offset="100%" stop-color="#e27aff"></stop>
-                          </linearGradient>
-                        </defs>
-                        <path
-                          d="M 100 520 C 35 430, 70 250, 190 180 C 310 105, 455 105, 565 175 C 665 240, 670 390, 580 480 C 490 570, 300 620, 165 550"
-                          fill="none"
-                          stroke="url(#hiw-path-gradient)"
-                          stroke-width="5"
-                          stroke-linecap="round"
-                          stroke-dasharray="12 12"
-                        ></path>
-                        <path
-                          d="M 535 135 L 575 160 L 535 185"
-                          fill="none"
-                          stroke="#d27aff"
-                          stroke-width="7"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></path>
-                      </svg>
+                     
+<svg
+  className="hiw-process-path"
+  viewBox="0 0 700 700"
+  preserveAspectRatio="none"
+>
+  <defs>
+    <linearGradient
+      id="hiw-path-gradient"
+      x1="0%"
+      y1="100%"
+      x2="100%"
+      y2="0%"
+    >
+      <stop offset="0%" stopColor="#663cff" />
+      <stop offset="50%" stopColor="#b45cff" />
+      <stop offset="100%" stopColor="#e27aff" />
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M 100 520 C 35 430, 70 250, 190 180 C 310 105, 455 105, 565 175 C 665 240, 670 390, 580 480 C 490 570, 300 620, 165 550"
+    fill="none"
+    stroke="url(#hiw-path-gradient)"
+    strokeWidth="5"
+    strokeLinecap="round"
+    strokeDasharray="12 12"
+  />
+
+  <path
+    d="M 535 135 L 575 160 L 535 185"
+    fill="none"
+    stroke="#d27aff"
+    strokeWidth="7"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>
+
                       <span className="hiw-particle hiw-particle-1"></span>
                       <span className="hiw-particle hiw-particle-2"></span>
                       <span className="hiw-particle hiw-particle-3"></span>

@@ -24,7 +24,7 @@ export default async function WorksPage() {
       <section className="process-detail">
         <div className="process-detail-container">
           <div className="process-heading">
-            <span className="section-tag">STEP-BY-STEP EXECUTION</span>
+            <span className="subheading">STEP-BY-STEP EXECUTION</span>
 
             <h2>
               From Initial Idea to Scalable Launch in <span>5 Clear Steps</span>
@@ -63,14 +63,14 @@ export default async function WorksPage() {
                       cy="11"
                       r="6.5"
                       stroke="currentColor"
-                      stroke-width="2"
+                      strokeWidth="2"
                     />
 
                     <path
                       d="M16 16l5 5"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
                     />
                   </svg>
                 </div>
@@ -91,29 +91,29 @@ export default async function WorksPage() {
                       height="18"
                       rx="2"
                       stroke="currentColor"
-                      stroke-width="1.8"
+                      strokeWidth="1.8"
                     />
 
                     <path
                       d="M8 7h8"
                       stroke="currentColor"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
                     />
 
                     <path
                       d="m8 12 1.5 1.5L12 11"
                       stroke="currentColor"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
 
                     <path
                       d="M8 16h6"
                       stroke="currentColor"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
                     />
                   </svg>
                 </div>
@@ -162,24 +162,24 @@ export default async function WorksPage() {
                     <path
                       d="m8 8-4 4 4 4"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
 
                     <path
                       d="m16 8 4 4-4 4"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
 
                     <path
                       d="m14 5-4 14"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
                     />
                   </svg>
                 </div>
@@ -197,15 +197,15 @@ export default async function WorksPage() {
                     <path
                       d="M4 13.5 13.5 4c1.8-.5 4.5.2 6.5 2.2s2.7 4.7 2.2 6.5L12.7 22l-2.2-5.5L5 14.3 4 13.5Z"
                       stroke="currentColor"
-                      stroke-width="1.7"
-                      stroke-linejoin="round"
+                      strokeWidth="1.7"
+                      strokeLinejoin="round"
                     />
 
                     <path
                       d="m5 14 4-4"
                       stroke="currentColor"
-                      stroke-width="1.7"
-                      stroke-linecap="round"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
                     />
 
                     <circle
@@ -213,7 +213,7 @@ export default async function WorksPage() {
                       cy="7.5"
                       r="1.5"
                       stroke="currentColor"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                     />
                   </svg>
                 </div>
@@ -242,7 +242,7 @@ export default async function WorksPage() {
   <div className="expect-container">
 
     <div className="expect-header">
-      <span className="dark-section-tag">NO BLACK-BOX DEVELOPMENT</span>
+      <span className="subheading">NO BLACK-BOX DEVELOPMENT</span>
 
       <h2>
        How We Keep Your Project on Track and&nbsp;<span>Stress-Free</span>
@@ -298,7 +298,7 @@ export default async function WorksPage() {
 
     <div className="collaboration-content">
 
-      <span className="section-tag">
+      <span className="subheading">
         QUICK ONBOARDING
       </span>
 
@@ -370,19 +370,19 @@ export default async function WorksPage() {
       </div>
 
       <div className="collab-node node-one">
-        Strategy
+        1 Strategy
       </div>
 
       <div className="collab-node node-two">
-        Design
+        2 Design
       </div>
 
       <div className="collab-node node-three">
-        Development
+       3 Development
       </div>
 
       <div className="collab-node node-four">
-        Feedback
+       4 Feedback
       </div>
 
     </div>

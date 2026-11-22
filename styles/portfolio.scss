@@ -42,6 +42,10 @@ section.portfolio-sec {
       margin-bottom: 16px;
       font-family: "Inter", sans-serif;
       color: #270f5c;
+      @media(max-width:767px){
+         font-size: 34px;
+         line-height: 44px;
+      }
 
       span {
         background: linear-gradient(90deg, #6335f0, #b97ffb);
@@ -58,6 +62,9 @@ section.portfolio-sec {
       color: #6b6b6b;
       font-family: "Inter", sans-serif;
 
+       @media (max-width: 1199px) {
+ max-width: 100%;
+       }
       @media (max-width: 767px) {
         max-width: 100%;
         font-size: 16px;
@@ -88,14 +95,33 @@ section.portfolio-sec {
       border: 1px solid #b279f9;
       border-radius: 50px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      &::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient( 90deg, #7138f5, #a65cf7, #d58aff );
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      z-index: -1;
+      }
+      &:hover{
+        color: #fff;
+      }
+      &:hover::before{
+            transform: scaleX(1);
+      }
+
 
       @media (max-width: 767px) {
         margin: 0 10px 10px 0;
       }
 
       &.active {
-        background: #29115d;
+        background: linear-gradient( 90deg, #7138f5, #a65cf7, #d58aff );;
         color: #fff;
       }
     }
@@ -149,6 +175,7 @@ section.portfolio-sec {
       .expand-img {
         object-fit: cover;
         transition: transform 0.6s ease;
+        width: 100%;
       }
 
       /* TEXT */

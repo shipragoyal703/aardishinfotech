@@ -7,7 +7,7 @@ export default function ImageText() {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-              <h4>WHO WE ARE</h4>
+              <span className="subheading">WHO WE ARE</span>
                 <h3>
                  Bridging the Gap Between Technical Excellence and  <span>Business Growth</span>
                 </h3>

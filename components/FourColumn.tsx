@@ -33,7 +33,7 @@ export default function FourColumn() {
     <section className="values-section guide">
       <div className="container">
         <div className="section-heading">
-          <span className="value">Why Partner With Us</span>
+          <span className="subheading">Why Partner With Us</span>
           <h2>
            THE AARDISH  <span>ADVANTAGE</span>
           </h2>

@@ -10,10 +10,27 @@ export const metadata: Metadata = {
     "Practical web development tutorials, UI/UX design breakdowns, and SEO playbooks to help your business build faster, rank higher, and convert more customers.",
 };
 
+interface WordPressBlog {
+  id: number;
+  slug: string;
+  title: {
+    rendered: string;
+  };
+  excerpt?: {
+    rendered: string;
+  };
+  _embedded?: {
+    "wp:featuredmedia"?: {
+      source_url: string;
+      alt_text?: string;
+    }[];
+  };
+}
+
 export default async function Blogs() {
-  const blogs = await fetchAPI(
+  const blogs = (await fetchAPI(
     "/wp/v2/posts?per_page=12&_embed"
-  );
+  )) as WordPressBlog[];
 
   return (
     <main className="case-studies-page blog-page">
@@ -21,7 +38,7 @@ export default async function Blogs() {
         <div className="container">
 
           <div className="case-studies-heading">
-            <span> INSIGHTS & RESOURCES</span>
+            <span className="subheading">INSIGHTS & RESOURCES</span>
 
             <h1>
               Blogs <strong></strong>
@@ -35,10 +52,11 @@ export default async function Blogs() {
           </div>
 
           <div className="row">
-            {blogs.map((blog: any) => {
-              const image =
-                blog._embedded?.["wp:featuredmedia"]?.[0]
-                  ?.source_url;
+            {blogs.map((blog) => {
+              const featuredMedia =
+                blog._embedded?.["wp:featuredmedia"]?.[0];
+
+              const image = featuredMedia?.source_url;
 
               return (
                 <div
@@ -57,8 +75,8 @@ export default async function Blogs() {
                           width={800}
                           height={500}
                           alt={
-                            blog._embedded?.["wp:featuredmedia"]?.[0]
-                              ?.alt_text || blog.title.rendered
+                            featuredMedia?.alt_text ||
+                            blog.title.rendered.replace(/<[^>]*>/g, "")
                           }
                         />
                       </Link>

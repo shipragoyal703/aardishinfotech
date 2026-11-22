@@ -34,6 +34,9 @@ footer.footer {
         line-height: 19px;
         letter-spacing: 0.69px;
         font-family: "Inter", sans-serif;
+        &:hover{
+              color: #7948f3;
+        }
       }
     }
   }
@@ -46,12 +49,16 @@ footer.footer {
     line-height: 19px;
     letter-spacing: 0.69px;
     font-family: "Inter", sans-serif;
+
   }
 
   /* CONTACT */
   .contact {
     a {
       margin-bottom: 20px;
+      &:hover{
+            color: #7948f3;
+      }
     }
 
     ul {
@@ -129,6 +136,7 @@ footer.footer {
 
     @media (max-width: 767px) {
       display: block;
+       margin-top: 20px;
     }
 
     p {
@@ -261,9 +269,7 @@ div#success-message {
       transition: background 0.3s ease;
     }
 
-    button.sib-form-block__button:hover {
-      background: #4e24d0;
-    }
+  
 
     .sib-form-message-panel {
       max-width: 100% !important;

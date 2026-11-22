@@ -3,8 +3,77 @@
 
 import "@/styles/services.scss";
 import { useState, useMemo, useRef, useEffect } from "react";
+import Image from "next/image";
 
-export default function Services({ data }: any) {
+interface ServiceImage {
+  url: string;
+  alt?: string;
+}
+
+interface ServiceData {
+  [key: string]: string | ServiceImage | null | undefined;
+}
+
+interface ServiceItem {
+  title: string;
+  description: string;
+  image?: ServiceImage | null;
+  animationImage?: ServiceImage | null;
+}
+
+interface ServicesProps {
+  data: ServiceData;
+}
+
+function getServiceImage(value: unknown): ServiceImage | null {
+  if (
+    typeof value === "object" &&
+    value !== null &&
+    "url" in value &&
+    typeof value.url === "string"
+  ) {
+    return {
+      url: value.url,
+      alt:
+        "alt" in value && typeof value.alt === "string"
+          ? value.alt
+          : undefined,
+    };
+  }
+
+  return null;
+}
+
+function buildServices(acf: ServiceData, count: number): ServiceItem[] {
+  const items: ServiceItem[] = [];
+
+  for (let i = 1; i <= count; i++) {
+    const titleValue = acf[`service_title_${i}`];
+    const descriptionValue = acf[`service_description_${i}`];
+
+    const title = typeof titleValue === "string" ? titleValue : "";
+    const description =
+      typeof descriptionValue === "string" ? descriptionValue : "";
+
+    const image = getServiceImage(acf[`service_image_${i}`]);
+    const animationImage = getServiceImage(
+      acf[`service_image_${i}_animation`]
+    );
+
+    if (title || description || image) {
+      items.push({
+        title,
+        description,
+        image,
+        animationImage,
+      });
+    }
+  }
+
+  return items;
+}
+
+export default function Services({ data }: ServicesProps) {
   const [active, setActive] = useState(0);
 
   const services = useMemo(() => buildServices(data, 6), [data]);
@@ -44,20 +113,19 @@ export default function Services({ data }: any) {
     <section className="services">
       <div className="container">
         <div className="row">
-
           {/* Heading */}
           <div className="col-sm-12 main-heading">
-            <h3>{data.service_sub_title}</h3>
+            <h3>{data.service_sub_title as string}</h3>
 
             <h4
               className="title-txt"
               dangerouslySetInnerHTML={{
-                __html: data.service_title,
+                __html: (data.service_title as string) || "",
               }}
             />
 
             <p className="description">
-              {data.service_description_text}
+              {data.service_description_text as string}
             </p>
           </div>
 
@@ -65,10 +133,8 @@ export default function Services({ data }: any) {
           <div className="col-sm-12">
             <div className="service-slider">
               <div className="plateform-slider row">
-
                 {/* Left Accordion */}
                 <div className="col-lg-6 slide-accordian">
-
                   {services.map((item, index) => (
                     <div
                       key={index}
@@ -76,13 +142,10 @@ export default function Services({ data }: any) {
                         accordionRefs.current[index] = el;
                       }}
                       className={`accordian-item ${
-                        active === index
-                          ? "active open-default"
-                          : ""
+                        active === index ? "active open-default" : ""
                       }`}
                       onClick={() => handleClick(index)}
                     >
-
                       {/* Accordion Title */}
                       <div className="accordian-toggle-btn">
                         <div className="accordian-title">
@@ -104,29 +167,26 @@ export default function Services({ data }: any) {
                           {/* Mobile Image */}
                           <div className="mobile-service-image">
                             <div className="animation-img-wrap animate">
-
                               {item.image?.url && (
-                                <img
+                                <Image
                                   src={item.image.url}
                                   alt={item.image.alt || item.title}
                                   className="animation-main-img"
+                                   width={800}
+  height={600}
                                   loading="lazy"
                                 />
                               )}
-
                             </div>
                           </div>
                         </>
                       )}
-
                     </div>
                   ))}
-
                 </div>
 
                 {/* Desktop Right Image Slider */}
                 <div className="col-lg-6 accordian-slider-img">
-
                   <div className="slider-wrapper">
                     <div
                       className="slider-track"
@@ -134,76 +194,47 @@ export default function Services({ data }: any) {
                         transform: `translateX(-${active * 100}%)`,
                       }}
                     >
-
                       {services.map((item, index) => (
                         <div key={index} className="slide">
-
                           <div
                             className={`animation-img-wrap ${
                               active === index ? "animate" : ""
                             }`}
                           >
-
                             {item.image?.url && (
-                              <img
+                              <Image
                                 src={item.image.url}
                                 alt={item.image.alt || item.title}
                                 className="animation-main-img"
                                 loading="lazy"
+                                  width={800}
+  height={600}
                               />
                             )}
 
                             {item.animationImage?.url && (
-                              <img
+                              <Image
                                 src={item.animationImage.url}
                                 alt={
                                   item.animationImage.alt || item.title
                                 }
                                 className="animation-hover-img"
+                                  width={800}
+  height={600}
                                 loading="lazy"
                               />
                             )}
-
                           </div>
-
                         </div>
                       ))}
-
                     </div>
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
   );
-}
-
-
-/* Build Services from ACF */
-function buildServices(acf: any, count: number) {
-  const items: any[] = [];
-
-  for (let i = 1; i <= count; i++) {
-    const title = acf?.[`service_title_${i}`];
-    const description = acf?.[`service_description_${i}`];
-    const image = acf?.[`service_image_${i}`];
-    const animationImage = acf?.[`service_image_${i}_animation`];
-
-    if (title || description || image) {
-      items.push({
-        title,
-        description,
-        image,
-        animationImage,
-      });
-    }
-  }
-
-  return items;
 }

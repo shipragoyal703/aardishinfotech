@@ -1,21 +1,51 @@
+
 "use client";
 
 import "@/styles/tools.scss";
+import Image from "next/image";
 
-export default function Tools({ data }: any) {
+interface ToolImage {
+  url: string;
+  alt?: string;
+}
+
+interface ToolItem {
+  image: ToolImage;
+  name: string;
+}
+
+interface ToolsData {
+  tools_subheading?: string;
+  tools_heading?: string;
+  tools_heading_purple?: string;
+  tools_description?: string;
+  [key: string]: string | ToolImage | null | undefined;
+}
+
+interface ToolsProps {
+  data: ToolsData;
+}
+
+interface SlideItemProps {
+  item: ToolItem;
+}
+
+export default function Tools({ data }: ToolsProps) {
   const row1 = buildRow(data, "platform", "platform", 7);
   const row2 = buildRow(data, "platform_row_2", "platform_row2", 7);
 
   return (
     <section className="tools-section">
       <div className="container">
-
         {/* HEADING */}
         <div className="tools-content">
           <span className="subheading">{data.tools_subheading}</span>
+
           <h3>
-            {data.tools_heading} <span>{data.tools_heading_purple}</span>
+            {data.tools_heading}{" "}
+            <span>{data.tools_heading_purple}</span>
           </h3>
+
           <p>{data.tools_description}</p>
         </div>
 
@@ -36,17 +66,16 @@ export default function Tools({ data }: any) {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
 }
 
 /* Slide Card */
-function SlideItem({ item }: any) {
+function SlideItem({ item }: SlideItemProps) {
   return (
     <div className="tool-card">
-      <img src={item.image.url} alt={item.name} />
+      <Image src={item.image.url} alt={item.image.alt || item.name}  width={300} height={300}  />
       <span>{item.name}</span>
     </div>
   );
@@ -54,22 +83,37 @@ function SlideItem({ item }: any) {
 
 /* ACF Data Builder */
 function buildRow(
-  acf: any,
+  acf: ToolsData,
   imagePrefix: string,
   namePrefix: string,
   count = 7
-) {
-  const items: any[] = [];
+): ToolItem[] {
+  const items: ToolItem[] = [];
 
   for (let i = 1; i <= count; i++) {
-    const image = acf?.[`${imagePrefix}_image_${i}`];
-    const name = acf?.[`${namePrefix}_name_${i}`];
+    const imageValue = acf[`${imagePrefix}_image_${i}`];
+    const nameValue = acf[`${namePrefix}_name_${i}`];
 
-    if (image?.url) {
-      items.push({ image, name });
+    if (
+      typeof imageValue === "object" &&
+      imageValue !== null &&
+      "url" in imageValue &&
+      typeof imageValue.url === "string" &&
+      imageValue.url
+    ) {
+      items.push({
+        image: {
+          url: imageValue.url,
+          alt:
+            "alt" in imageValue && typeof imageValue.alt === "string"
+              ? imageValue.alt
+              : undefined,
+        },
+        name: typeof nameValue === "string" ? nameValue : "",
+      });
     }
   }
 
-  // duplicate for seamless infinite loop
+  // Duplicate for seamless infinite loop
   return [...items, ...items];
 }
