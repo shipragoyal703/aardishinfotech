@@ -36,7 +36,7 @@ export default function Header() {
             <div className="logo">
               <Link href="/" onClick={closeMenu}>
                 <Image
-                  src="/logo.png"
+                  src="/aardish-logo.png"
                   width={162}
                   height={60}
                   alt="Aardish Infotech"
