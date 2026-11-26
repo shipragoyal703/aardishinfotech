@@ -4052,14 +4052,9 @@ article.case-study-card {
 	box-shadow: 0 0 15px rgba(128,50,255,.35),inset 0 0 15px rgba(150,60,255,.15);
 	background: linear-gradient(135deg,#7034ed,#b968ff);
 	margin-bottom: 40px;
-	min-height: 580px;
+	
 
-	@media(max-width:1199px){
-		min-height: 610px;
-	}
-	@media(max-width:767px){
-		min-height: unset;
-	}
+
 
 	img {
 		width: 100%;
@@ -4076,6 +4071,14 @@ article.case-study-card {
 	}
 	h2 {
 		color: $color_1;
+		    min-height: 85px;
+			@media(max-width:1199px){
+				   min-height: 120px;
+			}
+			@media(max-width:767px){
+				min-height: unset;
+        		margin-bottom: 20px;
+			}
 		a {
 			color: $color_1;
 			font-size: 22px;
@@ -4500,7 +4503,7 @@ article.case-study-card .case-study-excerpt p {
 	font-size: 18px;
 }
 .blog-page article.case-study-card img {
-    height: 250px;
+    height: 215px;
     object-fit: cover;
     object-position: top;
     margin-bottom: 20px;

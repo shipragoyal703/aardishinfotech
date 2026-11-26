@@ -144,10 +144,12 @@ export default function DigitalPartner() {
                 </div>
                 <div className="col-lg-3">
                   <div className="col-right-1">
+                    <form>
                     <label className="auto-toggle">
                       <input ref={toggleRef} type="checkbox" />
                       <span className="slider"></span>
                     </label>
+                    </form>
 
 
                   </div>
