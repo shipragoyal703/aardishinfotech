@@ -2,10 +2,73 @@
 import DemoSection from "@/components/demo";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "Contact Aardish Infotech | Discuss Your Project With Us",
+  description:
+    "Get in touch with Aardish Infotech for website development, custom software, WordPress, Shopify, UI/UX design, and SEO services. Let's discuss your project.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Aardish Infotech | Let's Build Something Great",
+    description:
+      "Have a project in mind? Contact Aardish Infotech to discuss your web development, software, eCommerce, and digital marketing requirements.",
+    url: "https://aardishinfotech.in/contact",
+    type: "website",
+  },
+};
+
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://aardishinfotech.in/contact#webpage",
+      "url": "https://aardishinfotech.in/contact",
+      "name": "Contact Aardish Infotech",
+      "description":
+        "Get in touch with Aardish Infotech for website development, custom software, WordPress, Shopify, UI/UX design, and SEO services.",
+      "isPartOf": {
+        "@id": "https://aardishinfotech.in/#website"
+      },
+      "about": {
+        "@id": "https://aardishinfotech.in/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://aardishinfotech.in/#organization"
+      },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://aardishinfotech.in/#organization",
+      "name": "Aardish Infotech",
+      "url": "https://aardishinfotech.in",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "@id": "https://aardishinfotech.in/contact#contactpoint",
+          "contactType": "Sales and project enquiries",
+          "email": "info@aardishinfotech.in",
+          "telephone": "+91-8054071080",
+          "url": "https://aardishinfotech.in/contact",
+          "availableLanguage": "English"
+        }
+      ]
+    }
+  ]
+};
+
 
 export default function ContactPage() {
   return (
     <>
+          <JsonLd data={contactSchema} />
+
       {/* CONTACT HERO */}
       <section className="contact-hero">
         <div className="contact-container">
