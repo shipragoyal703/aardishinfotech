@@ -16,19 +16,35 @@ type Props = {
    REMOVE HTML FROM HEADING
 ========================= */
 
+
 function stripHtml(html: string) {
-  return html.replace(/<[^>]*>/g, "").trim();
+  return decodeHtmlEntities(
+    html.replace(/<[^>]*>/g, "")
+  ).trim();
 }
+
 
 /* =========================
    DECODE HTML ENTITIES
 ========================= */
 
+
 function decodeHtmlEntities(text: string) {
-  const textarea = document.createElement("textarea");
-  textarea.innerHTML = text;
-  return textarea.value;
+  return text
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&#(\d+);/g, (_, code) =>
+      String.fromCodePoint(Number(code))
+    )
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) =>
+      String.fromCodePoint(parseInt(code, 16))
+    );
 }
+
 
 /* =========================
    CREATE URL FRIENDLY ID

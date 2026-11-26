@@ -6,18 +6,106 @@ import StatsCounter from "@/components/StatsCounter";
 import FourColumn from "@/components/FourColumn";
 import WorksBanner from "@/components/works-banner";
 import { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "How It Works | Agile Web Development & Digital Process — Aardish Infotech",
   description:
     "See how Aardish Infotech takes your project from discovery and UI/UX design to custom web development, SEO, and launch with 3X faster turnarounds and 14 days of free support.",
+     alternates: {
+    canonical: "/how-it-works",
+  },
+  openGraph: {
+    title: "How It Works | Aardish Infotech",
+    description:
+      "Explore our step-by-step process for website development, UI/UX design, SEO, and successful project delivery.",
+    url: "https://aardishinfotech.in/how-it-works",
+    type: "website",
+  },
 };
+
+const worksSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://aardishinfotech.in/how-it-works#webpage",
+      "url": "https://aardishinfotech.in/how-it-works",
+      "name":
+        "How It Works | Agile Web Development & Digital Process — Aardish Infotech",
+      "description":
+        "See how Aardish Infotech takes your project from discovery and UI/UX design to custom web development, SEO, and launch with 3X faster turnarounds and 14 days of free support.",
+      "isPartOf": {
+        "@id": "https://aardishinfotech.in/#website"
+      },
+      "about": {
+        "@id": "https://aardishinfotech.in/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://aardishinfotech.in/how-it-works#howto"
+      },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://aardishinfotech.in/how-it-works#howto",
+      "name": "How Aardish Infotech Delivers Web Development Projects",
+      "description":
+        "A structured, milestone-driven process covering discovery, UI/UX design, full-stack development, quality assurance, launch, and post-launch support.",
+      "totalTime": "P4W",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Discovery, Audit & Technical Strategy",
+          "text":
+            "Understand business goals, target audience, competitors, and functional requirements. Audit existing websites for technical SEO, page speed, and conversion bottlenecks. Define project scope, sitemap architecture, technology stack, milestones, and pricing.",
+          "url":
+            "https://aardishinfotech.in/how-it-works#discovery"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Wireframing & Conversion-Focused UI/UX Design",
+          "text":
+            "Map user journeys and create mobile-first visual designs. Prepare wireframes, high-fidelity UI designs, and interactive Figma prototypes for review and approval.",
+          "url":
+            "https://aardishinfotech.in/how-it-works#design"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Agile Full-Stack Development & Third-Party Integrations",
+          "text":
+            "Develop the approved designs using scalable frontend and backend code. Configure CMS and eCommerce functionality, create a staging environment, and integrate CRMs, payment gateways, analytics, and APIs.",
+          "url":
+            "https://aardishinfotech.in/how-it-works#development"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "QA, Speed & Post-Launch Support",
+          "text":
+            "Complete cross-browser and multi-device testing, optimize Core Web Vitals and page speed, deploy the project, verify Google Search Console and GA4, and provide 14 days of complimentary post-launch technical support.",
+          "url":
+            "https://aardishinfotech.in/how-it-works#quality-assurance"
+        }
+      ],
+      "provider": {
+        "@id": "https://aardishinfotech.in/#organization"
+      }
+    }
+  ]
+};
+
 
 export default async function WorksPage() {
   
 
   return (
     <>
+          <JsonLd data={worksSchema} />
+
       <section className="about-section">
         <WorksBanner />
       </section>

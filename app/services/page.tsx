@@ -7,21 +7,160 @@ import FourColumn from "@/components/FourColumn";
 import Heading from "@/components/Heading";
 import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Web Development, eCommerce & SEO Services | Aardish Infotech",
   description:
-    "Explore end-to-end web development, eCommerce, custom software, UI/UX design, and technical SEO services from Aardish Infotech. Scalable digital solutions built for growth. Get a free quote.",
+    "Explore Aardish Infotech's web development, WordPress, Shopify, eCommerce, custom software, UI/UX design, and SEO services. Get scalable digital solutions tailored to your business goals.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Web Development, eCommerce & SEO Services | Aardish Infotech",
+    description:
+      "Discover professional web development, eCommerce, custom software, UI/UX design, and SEO solutions from Aardish Infotech.",
+    url: "https://aardishinfotech.in/services",
+    type: "website",
+  },
 };
-
-
 
 
 export default async function ServicesPage() {
   const page = await fetchAPI("/wp/v2/pages/22");
 
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://aardishinfotech.in/services#webpage",
+      "url": "https://aardishinfotech.in/services",
+      "name": "Web Development, eCommerce & SEO Services | Aardish Infotech",
+      "description":
+        "Explore Aardish Infotech's web development, WordPress, Shopify, eCommerce, custom software, UI/UX design, and SEO services.",
+      "isPartOf": {
+        "@id": "https://aardishinfotech.in/#website"
+      },
+      "about": {
+        "@id": "https://aardishinfotech.in/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://aardishinfotech.in/services#service-list"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://aardishinfotech.in/services#service-list",
+      "name": "Aardish Infotech Services",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Custom Website Development",
+            "description": "Fast, responsive, and conversion-engineered websites tailored to your brand identity and business objectives.",
+            "provider": {
+              "@id": "https://aardishinfotech.in/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Technical & Growth Search Engine Optimization (SEO)",
+            "description": "Capture high-intent organic search traffic, outrank competitors, and turn search visibility into qualified leads.",
+            "provider": {
+              "@id": "https://aardishinfotech.in/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "eCommerce Website Development",
+            "description": "High-converting online stores engineered to maximize average order value, streamline checkout, and scale effortlessly.",
+            "provider": {
+              "@id": "https://aardishinfotech.in/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "Web & Custom Application Development",
+            "description": "Bespoke web applications, SaaS platforms, and custom API integrations built to automate workflows.",
+            "provider": {
+              "@id": "https://aardishinfotech.in/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "name": "Professional UI/UX & Digital Design",
+            "description": "Intuitive, human-centered interfaces and scalable design systems that turn casual visitors into loyal customers.",
+            "provider": {
+              "@id": "https://aardishinfotech.in/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "name": "Website Performance & Technical Support",
+            "description": "Proactive monitoring, speed optimization, and ongoing support to keep digital platforms fast, secure, and online.",
+            "provider": {
+              "@id": "https://aardishinfotech.in/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "name": "Mobile App Development",
+            "description": "Custom iOS and Android applications with intuitive interfaces and smooth performance.",
+            "provider": {
+              "@id": "https://aardishinfotech.in/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "name": "CMS Website Development",
+            "description": "Flexible, responsive websites powered by content management systems like WordPress, Shopify, or custom CMS platforms.",
+            "provider": {
+              "@id": "https://aardishinfotech.in/#organization"
+            }
+          }
+        }
+      ]
+    }
+  ]
+};
+
   return (
     <>
+      <JsonLd data={servicesSchema} />
       <section className="about-section">
         <Banner data={page.acf} type="services" />
       </section>

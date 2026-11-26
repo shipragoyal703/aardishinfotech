@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import { fetchAPI } from "@/lib/api";
+import JsonLd from "@/components/JsonLd";
 
 interface WordPressPage {
   id: number;
@@ -14,7 +15,7 @@ interface WordPressPage {
   };
 }
 
-export const dynamic = "force-dynamic";
+
 
 async function getPrivacyPolicy(): Promise<WordPressPage | null> {
   try {
@@ -38,16 +39,75 @@ export function generateMetadata(): Metadata {
     description:
       "Read the Privacy Policy of Aardish Infotech to understand how we collect, use, and protect your personal information.",
     alternates: {
-      canonical: "https://aardishinfotech.in/privacy-policy/",
-    },
+    canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Aardish Infotech",
+    description:
+      "Read the Aardish Infotech Privacy Policy to understand how we handle and protect your personal information.",
+    url: "https://aardishinfotech.in/privacy-policy",
+    type: "website",
+  },
   };
 }
+
 
 export default async function PrivacyPolicyPage() {
   const page = await getPrivacyPolicy();
 
+  const pageTitle = page?.title.rendered
+    ? page.title.rendered.replace(/<[^>]*>/g, "").trim()
+    : "Privacy Policy | Aardish Infotech";
+
+  const canonicalUrl =
+    "https://aardishinfotech.in/privacy-policy";
+
+  const privacySchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": pageTitle,
+        "description":
+          "Read the Privacy Policy of Aardish Infotech to understand how we collect, use, and protect your personal information.",
+        "isPartOf": {
+          "@id": "https://aardishinfotech.in/#website"
+        },
+        "about": {
+          "@id": "https://aardishinfotech.in/#organization"
+        },
+        "mainEntity": {
+          "@id": `${canonicalUrl}#policy`
+        },
+        ...(page?.modified && {
+          "dateModified": page.modified
+        }),
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "DigitalDocument",
+        "@id": `${canonicalUrl}#policy`,
+        "name": pageTitle,
+        "url": canonicalUrl,
+        "description":
+          "The Privacy Policy of Aardish Infotech explains how personal information is collected, used, and protected.",
+        "publisher": {
+          "@id": "https://aardishinfotech.in/#organization"
+        },
+        ...(page?.modified && {
+          "dateModified": page.modified
+        }),
+        "inLanguage": "en-IN"
+      }
+    ]
+  };
+
   return (
     <main className="legalPage">
+      <JsonLd data={privacySchema} />
+
       <div className="container">
         {page ? (
           <>

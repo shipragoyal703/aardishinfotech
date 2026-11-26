@@ -13,11 +13,40 @@ const inter = Inter({
   display: "swap",
 });
  
+
 export const metadata: Metadata = {
-  title: "Aardish Infotech | Digital Solutions & IT Services",
+  metadataBase: new URL("https://aardishinfotech.in"),
+
+  title: {
+    default: "Aardish Infotech | Digital Solutions & IT Services",
+    template: "%s | Aardish Infotech",
+  },
+
   description:
-    "Aardish Infotech delivers innovative web development, software solutions, and digital services to help businesses grow and succeed online.",
+    "Aardish Infotech delivers web development, software solutions, WordPress, Shopify, UI/UX design and SEO services.",
+
+
+
+  robots: {
+    index: true,
+    follow: true,
+     googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://aardishinfotech.in/",
+    siteName: "Aardish Infotech",
+    title: "Aardish Infotech | Digital Solutions & IT Services",
+    description:
+      "Professional website development and digital solutions for growing businesses.",
+  },
 };
+
 
 export default function RootLayout({
   children,

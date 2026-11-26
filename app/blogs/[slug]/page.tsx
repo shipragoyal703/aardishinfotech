@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { fetchAPI } from "@/lib/api";
+import JsonLd from "@/components/JsonLd";
 
 interface Props {
   params: Promise<{
@@ -30,6 +31,7 @@ interface WordPressPost {
   id: number;
   slug: string;
   date: string;
+  modified?: string;
   title: {
     rendered: string;
   };
@@ -46,17 +48,44 @@ interface WordPressPost {
   };
 }
 
-// Fetch Single Blog
-async function getBlog(slug: string): Promise<WordPressPost | null> {
-  const blogs = (await fetchAPI(
-    `/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed`
-  )) as WordPressPost[];
+// Clean WordPress HTML entities and tags for metadata
+function cleanText(value: string): string {
+  return value
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#8217;/g, "'")
+    .replace(/&#8216;/g, "'")
+    .replace(/&#8220;/g, '"')
+    .replace(/&#8221;/g, '"')
+    .replace(/&#8211;/g, "-")
+    .replace(/&#8212;/g, "-")
+    .replace(/&quot;/g, '"')
+    .replace(/&#038;/g, "&")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
-  return blogs?.length ? blogs[0] : null;
+// Fetch Single Blog
+async function getBlog(
+  slug: string
+): Promise<WordPressPost | null> {
+  try {
+    const blogs = (await fetchAPI(
+      `/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed`
+    )) as WordPressPost[];
+
+    return blogs?.length ? blogs[0] : null;
+  } catch (error) {
+    console.error("Single Blog Fetch Error:", error);
+    return null;
+  }
 }
 
 // Fetch Previous and Next Blogs
-async function getAdjacentPosts(blog: WordPressPost): Promise<{
+async function getAdjacentPosts(
+  blog: WordPressPost
+): Promise<{
   previous: WordPressPost | null;
   next: WordPressPost | null;
 }> {
@@ -93,16 +122,62 @@ export async function generateMetadata({
   if (!blog) {
     return {
       title: "Blog Not Found | Aardish Infotech",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
+  const cleanTitle = cleanText(blog.title.rendered);
+
   const description =
-    blog.excerpt?.rendered?.replace(/<[^>]*>/g, "").trim() ||
-    "Read the latest insights from Aardish Infotech.";
+    cleanText(blog.excerpt?.rendered || "").slice(0, 160) ||
+    "Read the latest web development, technology and digital marketing insights from Aardish Infotech.";
+
+  const featuredImage =
+    blog._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+
+  const canonicalUrl =
+    `https://aardishinfotech.in/blogs/${encodeURIComponent(slug)}`;
 
   return {
-    title: `${blog.title.rendered.replace(/<[^>]*>/g, "")} | Aardish Infotech`,
-    description: description.slice(0, 160),
+    title: cleanTitle,
+    description,
+
+    alternates: {
+      canonical: `/blogs/${encodeURIComponent(slug)}`,
+    },
+
+    openGraph: {
+      type: "article",
+      url: canonicalUrl,
+      siteName: "Aardish Infotech",
+      title: cleanTitle,
+      description,
+      publishedTime: blog.date,
+      modifiedTime: blog.modified || blog.date,
+      images: featuredImage
+        ? [
+            {
+              url: featuredImage,
+              alt: cleanTitle,
+            },
+          ]
+        : [],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: cleanTitle,
+      description,
+      images: featuredImage ? [featuredImage] : [],
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
@@ -120,8 +195,15 @@ export default async function SingleBlogPage({
 
   const { previous, next } = await getAdjacentPosts(blog);
 
-  const featuredMedia = blog._embedded?.["wp:featuredmedia"]?.[0];
+  const featuredMedia =
+    blog._embedded?.["wp:featuredmedia"]?.[0];
+
   const featuredImage = featuredMedia?.source_url;
+
+  const cleanTitle = cleanText(blog.title.rendered);
+
+  const description =
+    cleanText(blog.excerpt?.rendered || "") || cleanTitle;
 
   const author =
     blog._embedded?.author?.[0]?.name || "Aardish Infotech";
@@ -129,8 +211,77 @@ export default async function SingleBlogPage({
   const categories =
     blog._embedded?.["wp:term"]?.[0] || [];
 
+  const canonicalUrl =
+    `https://aardishinfotech.in/blogs/${encodeURIComponent(slug)}`;
+
+  // BlogPosting Structured Data
+  
+  // BlogPosting and WebPage Structured Data
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": cleanTitle,
+        "description": description,
+        "isPartOf": {
+          "@id": "https://aardishinfotech.in/#website"
+        },
+        "about": {
+          "@id": "https://aardishinfotech.in/#organization"
+        },
+        "mainEntity": {
+          "@id": `${canonicalUrl}#article`
+        },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": `${canonicalUrl}#article`,
+        "url": canonicalUrl,
+        "headline": cleanTitle,
+        "description": description,
+        "datePublished": blog.date,
+        ...(blog.modified && {
+          "dateModified": blog.modified
+        }),
+        "mainEntityOfPage": {
+          "@id": `${canonicalUrl}#webpage`
+        },
+        "author": blog._embedded?.author?.[0]?.name
+          ? {
+              "@type": "Person",
+              "name": author
+            }
+          : {
+              "@type": "Organization",
+              "@id": "https://aardishinfotech.in/#organization"
+            },
+        "publisher": {
+          "@id": "https://aardishinfotech.in/#organization"
+        },
+        ...(featuredImage && {
+          "image": [featuredImage]
+        }),
+        ...(categories.length > 0 && {
+          "articleSection": categories.map(
+            (category) => category.name
+          )
+        }),
+        "inLanguage": "en-IN"
+      }
+    ]
+  };
+
+
   return (
     <main className="single-blog-page">
+
+      {/* BlogPosting JSON-LD */}
+      <JsonLd data={blogSchema} />
+
       <section className="single-blog-section">
         <div className="container">
           <div className="row">
@@ -146,7 +297,7 @@ export default async function SingleBlogPage({
                       src={featuredImage}
                       alt={
                         featuredMedia?.alt_text ||
-                        blog.title.rendered.replace(/<[^>]*>/g, "")
+                        cleanTitle
                       }
                       width={1200}
                       height={700}
@@ -265,6 +416,7 @@ export default async function SingleBlogPage({
                   >
                     View All Blogs →
                   </Link>
+
                 </div>
               </aside>
             </div>
