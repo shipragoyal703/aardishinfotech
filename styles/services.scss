@@ -270,6 +270,7 @@ h4.title-txt strong {
     width: 100%;
     overflow: hidden;
     border-radius: 24px;
+    height: 100%;
   }
 
   .animation-main-img,
@@ -281,19 +282,21 @@ h4.title-txt strong {
   }
 
   .animation-img-wrap.animate .animation-main-img {
-    animation: serviceMainFade 8s infinite ease-in-out;
+    //animation: serviceMainFade 8s infinite ease-in-out;
   }
 
   .animation-img-wrap.animate .animation-hover-img {
-    animation: serviceHoverFade 8s infinite ease-in-out;
+   // animation: serviceHoverFade 8s infinite ease-in-out;
   }
 
   .animation-main-img {
     position: relative;
     z-index: 1;
-    animation: serviceMainFade 8s infinite ease-in-out;
+    //animation: serviceMainFade 8s infinite ease-in-out;
     backface-visibility: hidden;
     transform: translateZ(0);
+    height: 100%;
+    object-fit: cover;
   }
 
   .animation-hover-img {

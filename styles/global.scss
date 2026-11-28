@@ -253,14 +253,12 @@ section.values-section .section-heading h2 span {
     text-align: center;
     background-color: #160f2b;
     border-radius: 20px;
-    padding: 40px;
+    padding: 40px 20px;
     border: 1px solid #291e48;
     font-family: var(--font-lato), sans-serif;
-	
+	height: 100%;
 }
-section.values-section.guide .value-card {
-    min-height: 551px;
-}
+
 
 .value-card h3 {
     font-size: 19px;
@@ -270,7 +268,7 @@ section.values-section.guide .value-card {
 }
 
 .value-card  p {
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     opacity: 0.6;
 }
@@ -4051,16 +4049,27 @@ article.case-study-card {
 	border-radius: 25px;
 	box-shadow: 0 0 15px rgba(128,50,255,.35),inset 0 0 15px rgba(150,60,255,.15);
 	background: linear-gradient(135deg,#7034ed,#b968ff);
-	margin-bottom: 40px;
-	
+	margin-bottom: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
-
+	.case-study-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
 
 	img {
 		width: 100%;
-		height: auto;
-    	
-		  
+		border-radius: 20px;
+		height: 215px;
+		object-fit: cover;
+		object-position: top;
+		 @media(max-width:767px){
+			height: auto;
+		 } 
 	}
 
 	span.case-study-tag {
@@ -4071,10 +4080,7 @@ article.case-study-card {
 	}
 	h2 {
 		color: $color_1;
-		    min-height: 85px;
-			@media(max-width:1199px){
-				   min-height: 120px;
-			}
+		   
 			@media(max-width:767px){
 				min-height: unset;
         		margin-bottom: 20px;
@@ -4096,6 +4102,9 @@ a.case-study-link span {
 }
 section.case-studies-section {
 	font-family: $font-family_1;
+.row {
+    gap: 50px 0;
+}
 }
 a.case-study-link {
     color: #b162fd;
@@ -4110,6 +4119,7 @@ a.case-study-link {
     position: relative;
     isolation: isolate;
     overflow: hidden;
+	width: fit-content;
 }
 a.case-study-link::before {
     content: "";
@@ -4444,6 +4454,11 @@ article.single-blog-content {
 .blog-full-content {
   margin-top: 50px;
 
+  code {
+    color: #fff;
+    font-family: Inter,sans-serif;
+    font-size: 18px;
+}
   p.wp-block-paragraph {
     font-size: 18px;
 	@media(max-width:767px){
@@ -4509,8 +4524,8 @@ article.case-study-card .case-study-excerpt p {
     margin-bottom: 20px;
 	border-radius: 20px;
 	@media(max-width:767px){
-		    height: 100%;
-			object-fit: contain;
+		    height: auto;
+			object-fit: cover;
 	}
 }
 main.legalPage {
@@ -4534,9 +4549,9 @@ span.subheading {
     display: inline-block;
     padding: 12px 30px;
     border-radius: 999px;
-    background: linear-gradient(270deg, #ffffff, #e2d7ff, #7645f2, #ffffff);
+    background: linear-gradient(270deg, #ffffff, #e2d7ff, #ede8fa, #ffffff);
     background-size: 300% 300%;
-    animation: servicesBgMove 5s ease infinite;
+    animation: servicesBgMove 2s ease infinite;
 	display: table;
 	margin: 0 auto 16px;
 	@media(max-width:767px){

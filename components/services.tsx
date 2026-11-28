@@ -1,4 +1,3 @@
-
 "use client";
 
 import "@/styles/services.scss";
@@ -35,9 +34,7 @@ function getServiceImage(value: unknown): ServiceImage | null {
     return {
       url: value.url,
       alt:
-        "alt" in value && typeof value.alt === "string"
-          ? value.alt
-          : undefined,
+        "alt" in value && typeof value.alt === "string" ? value.alt : undefined,
     };
   }
 
@@ -56,9 +53,7 @@ function buildServices(acf: ServiceData, count: number): ServiceItem[] {
       typeof descriptionValue === "string" ? descriptionValue : "";
 
     const image = getServiceImage(acf[`service_image_${i}`]);
-    const animationImage = getServiceImage(
-      acf[`service_image_${i}_animation`]
-    );
+    const animationImage = getServiceImage(acf[`service_image_${i}_animation`]);
 
     if (title || description || image) {
       items.push({
@@ -115,7 +110,7 @@ export default function Services({ data }: ServicesProps) {
         <div className="row">
           {/* Heading */}
           <div className="col-sm-12 main-heading">
-            <h3>{data.service_sub_title as string}</h3>
+            <span className="subheading">{data.service_sub_title as string}</span>
 
             <h4
               className="title-txt"
@@ -148,9 +143,7 @@ export default function Services({ data }: ServicesProps) {
                     >
                       {/* Accordion Title */}
                       <div className="accordian-toggle-btn">
-                        <div className="accordian-title">
-                          {item.title}
-                        </div>
+                        <div className="accordian-title">{item.title}</div>
                       </div>
 
                       {/* Active Content */}
@@ -165,18 +158,28 @@ export default function Services({ data }: ServicesProps) {
                           />
 
                           {/* Mobile Image */}
+                          {/* Mobile Image */}
                           <div className="mobile-service-image">
                             <div className="animation-img-wrap animate">
-                              {item.image?.url && (
+                              {item.animationImage?.url ? (
+                                <Image
+                                  src={item.animationImage.url}
+                                  alt={`${item.title} animation`}
+                                  className="animation-main-img"
+                                  width={800}
+                                  height={600}
+                                  unoptimized
+                                />
+                              ) : item.image?.url ? (
                                 <Image
                                   src={item.image.url}
                                   alt={item.image.alt || item.title}
                                   className="animation-main-img"
-                                   width={800}
-  height={600}
+                                  width={800}
+                                  height={600}
                                   loading="lazy"
                                 />
-                              )}
+                              ) : null}
                             </div>
                           </div>
                         </>
@@ -185,6 +188,7 @@ export default function Services({ data }: ServicesProps) {
                   ))}
                 </div>
 
+                {/* Desktop Right Image Slider */}
                 {/* Desktop Right Image Slider */}
                 <div className="col-lg-6 accordian-slider-img">
                   <div className="slider-wrapper">
@@ -206,22 +210,20 @@ export default function Services({ data }: ServicesProps) {
                                 src={item.image.url}
                                 alt={item.image.alt || item.title}
                                 className="animation-main-img"
+                                width={800}
+                                height={600}
                                 loading="lazy"
-                                  width={800}
-  height={600}
                               />
                             )}
 
                             {item.animationImage?.url && (
                               <Image
                                 src={item.animationImage.url}
-                                alt={
-                                  item.animationImage.alt || item.title
-                                }
+                                alt={`${item.title} animation`}
                                 className="animation-hover-img"
-                                  width={800}
-  height={600}
-                                loading="lazy"
+                                width={800}
+                                height={600}
+                                unoptimized
                               />
                             )}
                           </div>

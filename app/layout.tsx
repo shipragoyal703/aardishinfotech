@@ -6,6 +6,8 @@ import "../styles/global.scss";
 import Footer from "@/components/footer";
 import Script from "next/script";
 import "../styles/buttons.scss";
+import TawkToChat from "@/components/TawkToChat";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -90,7 +92,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
+
         <Footer />
+          <TawkToChat />
       </body>
     </html>
   );
