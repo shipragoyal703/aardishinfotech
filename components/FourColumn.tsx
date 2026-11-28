@@ -35,7 +35,7 @@ export default function FourColumn() {
         <div className="section-heading">
           <span className="subheading">Why Partner With Us</span>
           <h2>
-           THE AARDISH  <span>ADVANTAGE</span>
+           The Aardish  <span>Advantage</span>
           </h2>
           <p>Why Growing Brands Choose Aardish Infotech</p>
         </div>
